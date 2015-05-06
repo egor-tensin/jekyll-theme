@@ -1,0 +1,4 @@
+baseurl: /cpp_tips
+paginate: 10
+include_comments: true
+excerpt_separator: ""
