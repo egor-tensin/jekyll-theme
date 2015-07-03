@@ -41,8 +41,6 @@ Anyway, I was designing a software system with a couple of singletons in it.
 I was trying to do proper singletons using C++11 like this:
 
 {% highlight c++ %}
-#pragma once
-
 #include <mutex>
 
 template <typename DerivedT>
