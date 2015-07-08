@@ -1,6 +1,6 @@
 # C++ tips
 
-Thoughs on C++ and life.
+Personal C++ notes.
 Hosted on [GitHub Pages](https://pages.github.com) at https://egor-tensin.github.io/cpp_tips/.
 
 ## Installation
