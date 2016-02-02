@@ -1,4 +1,5 @@
 baseurl: /cpp_tips
+gems: [jekyll-paginate]
 paginate: 10
 include_comments: true
 excerpt_separator: ""
