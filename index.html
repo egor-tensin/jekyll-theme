@@ -11,7 +11,7 @@ navbar_link: <span class="glyphicon glyphicon-home"></span>&nbsp;Main page
 {% else %}
   {% for post in paginator.posts %}
     <h2>{{ post.title }}</h2>
-    <p>{{ post.excerpt | stip_html }}</p>
+    <p>{{ post.excerpt }}</p>
     <div style="display: table; width: 100%;">
       <div style="display: table-row;">
         <div style="display: table-cell;">
