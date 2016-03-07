@@ -2,11 +2,9 @@
 title: std::call_once bug in Visual Studio 2012/2013
 layout: post
 excerpt: >
-  <p>In this post, I will describe a neat bug I've stumbled upon in C++
-  Standard Library implementation shipped with Microsoft Visual Studio
-  2012/2013.</p>
+  In this post, I will describe a neat bug I've stumbled upon in C++ Standard
+  Library implementation shipped with Microsoft Visual Studio 2012/2013.
 ---
-
 ### Abstract
 
 In this post, I will describe a neat bug I've stumbled upon in C++ Standard
@@ -38,12 +36,13 @@ Fortunately, I've come across the personal website of this amazing guy,
 [Stephan T. Lavavej](http://nuwen.net/stl.html),
 who appears to be the chief maintainer of Microsoft's standard library
 implementation.
-He seems to be your go-to guy when it comes to standard library misbehaviour.
+He seems to be your go-to guy when it comes to obvious standard library
+misbehaviours.
 
 ## C++11 and singletons
 
-Anyway, I was designing a software system with a couple of singletons in it.
-I was trying to do proper singletons using C++11 like this:
+Anyway, the story begins with me trying to implement the singleton pattern
+using C++11 facilities like this:
 
 {% highlight c++ %}
 #include <mutex>
@@ -74,7 +73,7 @@ private:
         DerivedT::get_instance_unsafe();
     }
 
-    static std::once_flag initialize_flag;
+    static std::once_flag initialized_flag;
 
     Singleton(const Singleton&) = delete;
     Singleton& operator=(const Singleton&) = delete;
@@ -85,8 +84,8 @@ std::once_flag Singleton<DerivedT>::initialized_flag;
 {% endhighlight %}
 
 Neat, huh?
-Now other classes can inherit `Singleton`, implementing the singleton pattern
-with little work:
+Now other classes can inherit from `Singleton`, implementing the singleton
+pattern effortlessly:
 
 {% highlight c++ %}
 class Logger : public Singleton<Logger>
@@ -99,9 +98,9 @@ private:
 };
 {% endhighlight %}
 
-Note that this was at the time when the
+Note that the
 [N2660](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2660.htm)
-standard proposal wasn't implemented in the compilers shipped with Visual
+standard proposal isn't/wasn't implemented in the compilers shipped with Visual
 Studio 2012/2013.
 If it was, I wouldn't, of course, need to employ this `std::call_once`
 trickery, and the implementation would be much simpler, i.e. something like
@@ -129,18 +128,18 @@ thread-safe until C++11.
 Imagine what might happen if <code>Logger</code>s constructor takes some time
 to initialize the instance.
 If a couple of threads then call <code>get_instance</code>, the first thread
-might begin the initialization process, making the other thread believe that it
-doesn't need to initialize the instance anymore (goodbye, C++03).
-The second thread might then return a reference to a not fully initialized (and
-hence, unsafe to use) instance.</p>
+might begin the initialization process, making the other thread believe that
+the instance has already been intialized.
+This other thread might then return a reference to the instance which hasn't
+completed its initialization and is most likely unsafe to use.</p>
 
 <p>Since C++11 includes the proposal for
 <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2660.htm">"Dynamic Initialization and Destruction with Concurrency"</a>
 mentioned above, this routine would indeed be thread-safe in C++11.
-Unfortunately, the compilers shipped with Visual Studio 2012/2013 didn't
+Unfortunately, the compilers shipped with Visual Studio 2012/2013 don't/didn't
 implement this particular proposal, which caused me to turn my eyes to
-<code>std::call_once</code>, which seemed to implement exactly what I
-wanted.</p>
+<code>std::call_once</code>, which seems to implement exactly what I
+needed.</p>
 </div>
 
 ## The bug
@@ -250,7 +249,8 @@ int main()
 }
 {% endhighlight %}
 
-The first thread is supposed to be executed in about 13 seconds, right?
+The first thread is supposed to have to total running time of about 13 seconds,
+right?
 Three seconds to initialize the `Logger` instance and ten to initialize the
 `Duke` instance.
 The second thread, similarly, is supposed to be executed in about 3 seconds
@@ -266,7 +266,7 @@ Studio 2013's compiler:
 
 Isn't it wrong that the second thread actually took the same 13 seconds as the
 first thread?
-Better check with some other compiler.
+Better check with some other compiler in case it was me who made the mistake.
 Unfortunately, the program behaves as expected when compiled using GCC's
 compiler:
 
@@ -275,7 +275,9 @@ compiler:
     Exiting get_logger at Fri Jul  3 02:27:15 2015
     Exiting get_duke at Fri Jul  3 02:27:25 2015
 
-So this is was the bug that broke everything for me.
+So it appears that the implementation of `std::call_once` shipped with Visual
+Studio 2012/2013 relies on some kind of a global lock, which causes even the
+simple example above to misbehave.
 
 ## Resolution
 
