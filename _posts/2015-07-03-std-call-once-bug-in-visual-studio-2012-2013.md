@@ -279,6 +279,10 @@ So it appears that the implementation of `std::call_once` shipped with Visual
 Studio 2012/2013 relies on some kind of a global lock, which causes even the
 simple example above to misbehave.
 
+The complete code sample to demonstrate the misbehaviour described above can be
+found at
+[https://github.com/egor-tensin/cpp_tips/tree/gh-pages/src/std_call_once_bug_in_visual_studio_2012_2013](https://github.com/egor-tensin/cpp_tips/tree/gh-pages/src/std_call_once_bug_in_visual_studio_2012_2013).
+
 ## Resolution
 
 So, since I couldn't submit the bug via Visual Studio's
