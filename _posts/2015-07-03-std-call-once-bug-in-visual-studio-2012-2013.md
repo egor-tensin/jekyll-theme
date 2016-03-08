@@ -281,7 +281,7 @@ simple example above to misbehave.
 
 The complete code sample to demonstrate the misbehaviour described above can be
 found at
-[https://github.com/egor-tensin/cpp_tips/tree/gh-pages/src/std_call_once_bug_in_visual_studio_2012_2013](https://github.com/egor-tensin/cpp_tips/tree/gh-pages/src/std_call_once_bug_in_visual_studio_2012_2013).
+[https://github.com/egor-tensin/cpp_tips/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013](https://github.com/egor-tensin/cpp_tips/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013).
 
 ## Resolution
 
