@@ -1,3 +1,6 @@
 .reasonable-width {
   max-width: 400px;
 }
+div.panel-body figure.highlight pre {
+  margin-bottom: 0;
+}
