@@ -15,7 +15,7 @@ Library implementation shipped with Microsoft Visual Studio 2012/2013.
 This post, including code samples, is licenced under the terms of the MIT
 License.
 See
-[LICENSE.txt](https://github.com/egor-tensin/cpp_tips/blob/gh-pages/LICENSE.txt)
+[LICENSE.txt](https://github.com/egor-tensin/cpp-notes/blob/gh-pages/LICENSE.txt)
 for details.
 
 ## Introduction
@@ -281,7 +281,7 @@ simple example above to misbehave.
 
 The complete code sample to demonstrate the misbehaviour described above can be
 found at
-[https://github.com/egor-tensin/cpp_tips/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013](https://github.com/egor-tensin/cpp_tips/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013).
+[https://github.com/egor-tensin/cpp-notes/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013](https://github.com/egor-tensin/cpp-notes/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013).
 
 ## Resolution
 

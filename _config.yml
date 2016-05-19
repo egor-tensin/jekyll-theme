@@ -1,4 +1,4 @@
-baseurl: /cpp_tips
+baseurl: /cpp-notes
 gems: [jekyll-paginate]
 paginate: 10
 include_comments: true
