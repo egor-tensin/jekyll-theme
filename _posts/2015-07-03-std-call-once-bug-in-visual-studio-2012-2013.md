@@ -14,30 +14,29 @@ Library implementation shipped with Microsoft Visual Studio 2012/2013.
 
 This post, including code samples, is licenced under the terms of the MIT
 License.
-See
-[LICENSE.txt](https://github.com/egor-tensin/cpp-notes/blob/gh-pages/LICENSE.txt)
-for details.
+See [LICENSE.txt] for details.
+
+[LICENSE.txt]: https://github.com/egor-tensin/cpp-notes/blob/gh-pages/LICENSE.txt
 
 ## Introduction
 
 I've recently come across a nasty standard library bug in the implementation
 shipped with Microsoft Visual Studio 2012/2013.
-[StackOverflow](https://stackoverflow.com)
-was of
-[no help](https://stackoverflow.com/questions/26477070/concurrent-stdcall-once-calls),
-so I had to somehow report the bug to the maintainers.
-Oddly enough, Visual Studio's
-[Connect page](https://connect.microsoft.com/VisualStudio)
-wouldn't let me to report one, complaining that I supposedly had no right to do
-so, even though I was logged in from my work account, associated with my Visual
-Studio 2013 installation.
+[StackOverflow was of no help], so I had to somehow report the bug to the
+maintainers.
+Oddly enough, Visual Studio's [Connect page] wouldn't let me to report one,
+complaining that I supposedly had no right to do so, even though I was logged
+in from my work account, associated with my Visual Studio 2013 installation.
 
 Fortunately, I've come across the personal website of this amazing guy,
-[Stephan T. Lavavej](http://nuwen.net/stl.html),
-who appears to be the chief maintainer of Microsoft's standard library
-implementation.
+[Stephan T. Lavavej], who appears to be the chief maintainer of Microsoft's
+standard library implementation.
 He seems to be your go-to guy when it comes to obvious standard library
 misbehaviours.
+
+[StackOverflow was of no help]: https://stackoverflow.com/questions/26477070/concurrent-stdcall-once-calls
+[Connect page]: https://connect.microsoft.com/VisualStudio
+[Stephan T. Lavavej]: http://nuwen.net/stl.html
 
 ## C++11 and singletons
 
@@ -98,10 +97,8 @@ private:
 };
 {% endhighlight %}
 
-Note that the
-[N2660](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2660.htm)
-standard proposal isn't/wasn't implemented in the compilers shipped with Visual
-Studio 2012/2013.
+Note that the [N2660] standard proposal isn't/wasn't implemented in the
+compilers shipped with Visual Studio 2012/2013.
 If it was, I wouldn't, of course, need to employ this `std::call_once`
 trickery, and the implementation would be much simpler, i.e. something like
 this:
@@ -133,14 +130,15 @@ the instance has already been intialized.
 This other thread might then return a reference to the instance which hasn't
 completed its initialization and is most likely unsafe to use.</p>
 
-<p>Since C++11 includes the proposal for
-<a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2660.htm">"Dynamic Initialization and Destruction with Concurrency"</a>
-mentioned above, this routine would indeed be thread-safe in C++11.
+<p>Since C++11 includes the proposal mentioned above, this routine would indeed
+be thread-safe in C++11.
 Unfortunately, the compilers shipped with Visual Studio 2012/2013 don't/didn't
 implement this particular proposal, which caused me to turn my eyes to
 <code>std::call_once</code>, which seems to implement exactly what I
 needed.</p>
 </div>
+
+[N2660]: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2660.htm
 
 ## The bug
 
@@ -279,15 +277,15 @@ So it appears that the implementation of `std::call_once` shipped with Visual
 Studio 2012/2013 relies on some kind of a global lock, which causes even the
 simple example above to misbehave.
 
-The complete code sample to demonstrate the misbehaviour described above can be
-found at
-[https://github.com/egor-tensin/cpp-notes/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013](https://github.com/egor-tensin/cpp-notes/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013).
+The [complete code] sample to demonstrate the misbehaviour described above can
+be found in the blog's repository.
+
+[complete code]: https://github.com/egor-tensin/cpp-notes/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013
 
 ## Resolution
 
-So, since I couldn't submit the bug via Visual Studio's
-[Connect page](https://connect.microsoft.com/VisualStudio),
-I wrote to Mr. Lavavej directly, not hoping for an answer.
+So, since I couldn't submit the bug via Visual Studio's [Connect page], I wrote
+to Mr. Lavavej directly, not hoping for an answer.
 Amazingly, it took him less than a day to reply.
 He told me he was planning to overhaul `std::call_once` for Visual Studio 2015.
 Meanwhile, I had to stick to something else; I think I either dropped logging

@@ -1,25 +1,29 @@
 # C++ notes
 
 Personal C++ notes.
-Hosted on [GitHub Pages](https://pages.github.com) at
-https://egor-tensin.github.io/cpp-notes/.
+Hosted using [GitHub Pages] at https://egor-tensin.github.io/cpp-notes/.
+
+[GitHub Pages]: https://pages.github.com
 
 ## Installation
 
-[Jekyll](http://jekyllrb.com/) is used to build a set of static HTML pages from
-a collection of templates and resources.
+[Jekyll] is used to build a set of static HTML pages from a collection of
+templates and resources.
 It might seem like Jekyll doesn't support Windows very well.
 However, at the moment of writing one can get it to work using the excellent
 tutorial at http://jekyll-windows.juthilo.com/.
 I personally had no problems running Jekyll on Windows whatsoever.
 
-I use [Bundler](http://bundler.io/) to manage project's dependencies.
+I use [Bundler] to manage project's dependencies.
 Make sure you have the `bundler` gem installed; project dependencies can then
 be installed by executing
 
     bundle install
 
 in the project's root directory.
+
+[Jekyll]: https://jekyllrb.com/
+[Bundler]: http://bundler.io/
 
 ## Development
 
@@ -58,11 +62,11 @@ One easy workaround might be to `wget` the website and convert the links:
 
     wget --convert-links --recursive http://localhost:4000/
 
-## Licensing
+## License
 
 This project, including all of the files and their contents, is licensed under
 the terms of the MIT License.
-See LICENSE.txt for details.
+See [LICENSE.txt] for details.
 
 This website is build upon the Twitter Bootstrap framework, which is also MIT
 Licensed and copyright 2015 Twitter.
@@ -70,3 +74,5 @@ Licensed and copyright 2015 Twitter.
 A MIT Licensed CSS style sheet from
 https://github.com/mojombo/tpw/blob/master/css/syntax.css created by Tom
 Preston-Werner is used for syntax highlighting.
+
+[LICENSE.txt]: LICENSE.txt
