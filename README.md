@@ -1,11 +1,13 @@
-# C++ notes
+C++ notes
+=========
 
 Personal C++ notes.
 Hosted using [GitHub Pages] at https://egor-tensin.github.io/cpp-notes/.
 
 [GitHub Pages]: https://pages.github.com
 
-## Installation
+Installation
+------------
 
 [Jekyll] is used to build a set of static HTML pages from a collection of
 templates and resources.
@@ -25,7 +27,8 @@ in the project's root directory.
 [Jekyll]: https://jekyllrb.com/
 [Bundler]: http://bundler.io/
 
-## Development
+Development
+-----------
 
 To run a local web server, execute
 
@@ -46,23 +49,25 @@ from `_config.yml` during development.
 In particular, it
 
 * sets `minified_externals` to `false` so that the properly formatted versions
-  of external CSS stylesheets and JavaScript files are included instead of the
-  `min`ified versions,
+of external CSS stylesheets and JavaScript files are included instead of the
+`min`ified versions,
 * sets `include_comments` to `false` to exclude the Disqus comments section
-  from the posts,
+from the posts,
 * sets `baseurl` to an empty string so that the website can be accessed from
-  local web server's root directory (i.e. from http://localhost:4000/ instead
-  of http://localhost:4000/cpp-notes/).
+local web server's root directory (i.e. from http://localhost:4000/ instead of
+http://localhost:4000/cpp-notes/).
 
-## Accessing via file://
+Accessing via file://
+---------------------
 
 Jekyll doesn't provide native support for generating a static website which can
-be viewed without a web server.
-One easy workaround might be to `wget` the website and convert the links:
+be browsed without running an instance of Jekyll's web server.
+One easy workaround is to `wget` the website and convert the links:
 
     wget --convert-links --recursive http://localhost:4000/
 
-## License
+License
+-------
 
 This project, including all of the files and their contents, is licensed under
 the terms of the MIT License.

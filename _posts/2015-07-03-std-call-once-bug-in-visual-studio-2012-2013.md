@@ -16,9 +16,10 @@ This post, including code samples, is licenced under the terms of the MIT
 License.
 See [LICENSE.txt] for details.
 
-[LICENSE.txt]: https://github.com/egor-tensin/cpp-notes/blob/gh-pages/LICENSE.txt
+[LICENSE.txt]: {{ site.github.repository_url }}/blob/gh-pages/LICENSE.txt
 
-## Introduction
+Introduction
+------------
 
 I've recently come across a nasty standard library bug in the implementation
 shipped with Microsoft Visual Studio 2012/2013.
@@ -38,7 +39,8 @@ misbehaviours.
 [Connect page]: https://connect.microsoft.com/VisualStudio
 [Stephan T. Lavavej]: http://nuwen.net/stl.html
 
-## C++11 and singletons
+C++11 and singletons
+--------------------
 
 Anyway, the story begins with me trying to implement the singleton pattern
 using C++11 facilities like this:
@@ -140,7 +142,8 @@ needed.</p>
 
 [N2660]: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2660.htm
 
-## The bug
+The Bug
+-------
 
 Unfortunately, matters became a bit more complicated when I tried to have two
 singleton classes.
@@ -280,9 +283,10 @@ simple example above to misbehave.
 The [complete code] sample to demonstrate the misbehaviour described above can
 be found in the blog's repository.
 
-[complete code]: https://github.com/egor-tensin/cpp-notes/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013
+[complete code]: {{ site.github.repository_url }}/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013
 
-## Resolution
+Resolution
+----------
 
 So, since I couldn't submit the bug via Visual Studio's [Connect page], I wrote
 to Mr. Lavavej directly, not hoping for an answer.
