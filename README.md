@@ -2,12 +2,12 @@ C++ notes
 =========
 
 Personal C++ notes.
-Hosted using [GitHub Pages] at https://egor-tensin.github.io/cpp-notes/.
+Hosted on [GitHub Pages] at https://egor-tensin.github.io/cpp-notes/.
 
 [GitHub Pages]: https://pages.github.com
 
-Installation
-------------
+Prerequisites
+-------------
 
 [Jekyll] is used to build a set of static HTML pages from a collection of
 templates and resources.
@@ -27,8 +27,8 @@ in the project's root directory.
 [Jekyll]: https://jekyllrb.com/
 [Bundler]: http://bundler.io/
 
-Development
------------
+Usage
+-----
 
 To run a local web server, execute
 
@@ -57,8 +57,7 @@ from the posts,
 local web server's root directory (i.e. from http://localhost:4000/ instead of
 http://localhost:4000/cpp-notes/).
 
-Accessing via file://
----------------------
+### Access via file://
 
 Jekyll doesn't provide native support for generating a static website which can
 be browsed without running an instance of Jekyll's web server.
