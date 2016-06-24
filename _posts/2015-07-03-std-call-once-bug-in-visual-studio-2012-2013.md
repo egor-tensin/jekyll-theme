@@ -4,13 +4,15 @@ layout: post
 excerpt: >
   In this post, I will describe a neat bug I've stumbled upon in C++ Standard
   Library implementation shipped with Microsoft Visual Studio 2012/2013.
+custom_css:
+  - syntax.css
 ---
 ### Abstract
 
 In this post, I will describe a neat bug I've stumbled upon in C++ Standard
 Library implementation shipped with Microsoft Visual Studio 2012/2013.
 
-### Licensing
+### License
 
 This post, including code samples, is licenced under the terms of the MIT
 License.
