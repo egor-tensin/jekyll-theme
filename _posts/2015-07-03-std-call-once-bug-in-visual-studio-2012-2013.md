@@ -14,8 +14,7 @@ Library implementation shipped with Microsoft Visual Studio 2012/2013.
 
 ### License
 
-This post, including code samples, is licenced under the terms of the MIT
-License.
+Distributed under the MIT License.
 See [LICENSE.txt] for details.
 
 [LICENSE.txt]: {{ site.github.repository_url }}/blob/gh-pages/LICENSE.txt
@@ -174,7 +173,7 @@ private:
     Logger()
     {
         // Opening log files, etc.
-        std::this_thread::sleep_for(std::chrono::seconds{ 3 });
+        std::this_thread::sleep_for(std::chrono::seconds{3});
     }
 
     ~Logger() = default;
@@ -188,7 +187,7 @@ private:
     Duke()
     {
         Logger::get_instance() << "started Duke's initialization";
-        std::this_thread::sleep_for(std::chrono::seconds{ 10 });
+        std::this_thread::sleep_for(std::chrono::seconds{10});
         Logger::get_instance() << "finishing Duke's initialization";
     }
 
