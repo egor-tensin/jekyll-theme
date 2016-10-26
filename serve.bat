@@ -1,1 +1,1 @@
-bundle exec jekyll serve --watch --force_polling --drafts --config _config.yml,_config_dev.yml
+bundle exec jekyll serve --watch --force_polling --host 0.0.0.0 --drafts --config _config.yml,_config_dev.yml
