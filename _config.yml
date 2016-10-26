@@ -7,6 +7,7 @@ exclude:
   - Gemfile.lock
   - LICENSE.txt
   - serve.bat
+  - serve.sh
   - README.md
 
 paginate: 10
@@ -14,6 +15,14 @@ paginate: 10
 excerpt_separator: ""
 include_comments: true
 minified_externals: true
+
+highlighter: none
+
+markdown: kramdown
+
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
 
 bootstrap_version: 3.3.6
 jquery_version: 1.11.3

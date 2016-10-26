@@ -4,8 +4,6 @@ layout: post
 excerpt: >
   In this post, I will describe a neat bug I've stumbled upon in C++ Standard
   Library implementation shipped with Microsoft Visual Studio 2012/2013.
-custom_css:
-  - syntax.css
 ---
 ### Abstract
 
@@ -46,7 +44,7 @@ C++11 and singletons
 Anyway, the story begins with me trying to implement the singleton pattern
 using C++11 facilities like this:
 
-{% highlight c++ %}
+```
 #include <mutex>
 
 template <typename DerivedT>
@@ -83,13 +81,13 @@ private:
 
 template <typename DerivedT>
 std::once_flag Singleton<DerivedT>::initialized_flag;
-{% endhighlight %}
+```
 
 Neat, huh?
 Now other classes can inherit from `Singleton`, implementing the singleton
 pattern effortlessly:
 
-{% highlight c++ %}
+```
 class Logger : public Singleton<Logger>
 {
 private:
@@ -98,7 +96,7 @@ private:
 
     friend class Singleton<Logger>;
 };
-{% endhighlight %}
+```
 
 Note that the [N2660] standard proposal isn't/wasn't implemented in the
 compilers shipped with Visual Studio 2012/2013.
@@ -106,7 +104,7 @@ If it was, I wouldn't, of course, need to employ this `std::call_once`
 trickery, and the implementation would be much simpler, i.e. something like
 this:
 
-{% highlight c++ %}
+```
 class Logger
 {
 public:
@@ -120,7 +118,7 @@ private:
     Logger() = default;
     ~Logger() = default;
 };
-{% endhighlight %}
+```
 
 <div class="alert alert-info">
 <p>The point is that the <code>Logger::get_instance</code> routine above wasn't
@@ -156,7 +154,7 @@ logging to be done.
 OK, I thought, I will simply call `Logger::get_instance` inside `Duke`s
 constructor, and everything would be fine.
 
-{% highlight c++ %}
+```
 #include <chrono>
 #include <thread>
 
@@ -195,13 +193,13 @@ private:
 
     friend class Singleton<Duke>;
 };
-{% endhighlight %}
+```
 
 What would happen if I had two threads, one to do something with the `Duke`
 instance, and the other to do something else, logging in process?
 Like this:
 
-{% highlight c++ %}
+```
 #include <ctime>
 
 #include <iostream>
@@ -249,7 +247,7 @@ int main()
     t2.join();
     return 0;
 }
-{% endhighlight %}
+```
 
 The first thread is supposed to have to total running time of about 13 seconds,
 right?
