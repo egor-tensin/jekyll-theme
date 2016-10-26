@@ -16,7 +16,7 @@ excerpt_separator: ""
 include_comments: true
 minified_externals: true
 
-highlighter: none
+highlighter: rouge
 
 markdown: kramdown
 
