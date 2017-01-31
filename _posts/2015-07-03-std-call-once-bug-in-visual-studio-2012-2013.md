@@ -2,15 +2,10 @@
 title: std::call_once bug in Visual Studio 2012/2013
 layout: post
 excerpt: >
-  In this post I will describe a neat bug I've stumbled upon in the C++
+  In this post I will describe a nasty bug I've stumbled upon in the C++
   Standard Library implementation shipped with Microsoft Visual Studio
   2012/2013.
 ---
-{{ page.excerpt }}
-
-Introduction
-------------
-
 I've recently come across a nasty standard library bug in the implementation
 shipped with Microsoft Visual Studio 2012/2013.
 [StackOverflow was of no help], so I had to somehow report the bug to the

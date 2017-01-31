@@ -26,18 +26,18 @@ Excerpts from shell sessions in this post feature a few different commands
 besides Boost's `b2` and `cmake`, like `cd` and `cat`.
 They are used to hint at my personal directory layout, display various
 auxiliary files, etc.
-Windows' `cd`, for example, simply prints current working directory; Cygwin's
-`pwd` serves the same purpose.
+Windows' `cd`, for example, simply prints the current working directory;
+Cygwin's `pwd` serves the same purpose.
 `cat` is used to display files.
-Windows' command prompts are denoted with `>`s at beginning of each line;
+Windows' command prompts are denoted with `>`s at the beginning of each line;
 Cygwin's &mdash; with `$`s.
 
 Visual Studio
 -------------
 
-Statically-linked Boost libraries are built by default, both the debug and the
-release versions of them.
-While it is required to keep x86/x64 libraries in different directories (to
+Statically-linked Boost libraries are built, both the debug and the release
+versions of them (these are default settings).
+While it is required to keep x86 and x64 libraries in different directories (to
 avoid file name clashes), it's not necessary to separate debug libraries from
 their release counterparts, because that information is actually encoded in
 file names (the "gd" suffix).
@@ -129,7 +129,7 @@ $ ./b2 toolset=gcc-mingw              \
 Notice the two major differences from the x86 example:
 
 * the addition of `address-model=64` (as in the example for Visual Studio),
-* a different "user" configuration file, pointing to `x86_64-w64-mingw32-g++`
+* the different "user" configuration file, pointing to `x86_64-w64-mingw32-g++`
 instead of `i686-w64-mingw32-g++`.
 
 Again, as in the example for Visual Studio, a different "staging" directory
@@ -197,7 +197,7 @@ D:\workspace\build\test_project\msvc\x86
 ### Cygwin & MinGW-w64
 
 Examples below only apply to debug CMake builds.
-Notice that, contrary to the Visual Studio examples above, debug *and* release
+Notice that, contrary to the Visual Studio examples above, debug and release
 builds must be kept in separate directories.
 You may also want to adjust the paths.
 
