@@ -1,4 +1,0 @@
-/* So that things like <code>runtime-link=dynamic</code> don't wrap on =. */
-code {
-  white-space: nowrap;
-}
