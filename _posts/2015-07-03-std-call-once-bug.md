@@ -1,5 +1,5 @@
 ---
-title: std::call_once bug in Visual Studio 2012/2013
+title: std::call_once bug in Visual C++ 2012/2013
 layout: post
 excerpt: >
   In this post I will describe a nasty bug I've stumbled upon in the C++
@@ -252,7 +252,7 @@ simple example above to misbehave.
 The [complete code sample] to demonstrate the misbehaviour described above can
 be found in this blog's repository.
 
-[complete code sample]: {{ site.github.repository_url }}/tree/gh-pages/src/posts/std_call_once_bug_in_visual_studio_2012_2013
+[complete code sample]: {{ site.github.repository_url }}/tree/gh-pages/src/posts/std_call_once_bug
 
 Resolution
 ----------
