@@ -252,7 +252,7 @@ simple example above to misbehave.
 The [complete code sample] to demonstrate the misbehaviour described above can
 be found in this blog's repository.
 
-[complete code sample]: {{ site.github.repository_url }}/tree/gh-pages/src/posts/std_call_once_bug
+[complete code sample]: {{ site.github.repository_url }}/tree/master/std_call_once_bug
 
 Resolution
 ----------
