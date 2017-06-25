@@ -218,7 +218,7 @@ int main()
 
 `entered` and `exiting` are utility functions to print timestamps.
 The implementation is included in the [complete code sample].
-{: .alert .alert-info}
+{: .alert .alert-info }
 
 The first thread is supposed to have the total running time of about 13
 seconds, right?
