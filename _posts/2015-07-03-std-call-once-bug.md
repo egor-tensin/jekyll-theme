@@ -30,7 +30,7 @@ C++11 and singletons
 Anyway, the story begins with me trying to implement the singleton pattern
 using C++11 facilities like this:
 
-```
+```c++
 #include <mutex>
 
 template <typename Derived>
@@ -73,7 +73,7 @@ Neat, huh?
 Now other classes can inherit from `Singleton`, implementing the singleton
 pattern effortlessly:
 
-```
+```c++
 class Logger : public Singleton<Logger>
 {
 private:
@@ -90,7 +90,7 @@ If it was, I wouldn't, of course, need to employ this `std::call_once`
 trickery, and the implementation would be much simpler, i.e. something like
 this:
 
-```
+```c++
 class Logger
 {
 public:
@@ -140,7 +140,7 @@ required some logging to be done.
 I thought that I could simply call `Logger::get_instance` inside `Duke`'s
 constructor, and everything looked fine at first glance.
 
-```
+```c++
 #include <chrono>
 #include <thread>
 
@@ -186,7 +186,7 @@ Now, what happens if I have two threads, one using the `Duke` instance, and the
 other logging something?
 Like in this example:
 
-```
+```c++
 #include <thread>
 
 namespace
