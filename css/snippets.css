@@ -1,13 +1,6 @@
 div.panel-body pre {
   margin: 0;
   border: none;
-  /*
-   * Uncomment this property if you disable syntax highlighting (and thus
-   * don't use .highlight's background-color).
-   *
-  background-color: inherit;
-   *
-   */
   border-radius: 0 0 4px 4px;
 }
 div.panel-body {
