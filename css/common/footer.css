@@ -8,10 +8,10 @@ html, body {
   display: table;
 
   /*
-  Without this property, scrollbars inside <pre> elements don't work if
-  display's width is less than 750px.
-  God, I hate CSS.
-  */
+   * Without this property, scrollbars inside <pre> elements don't work if
+   * display's width is less than 750px.
+   * God, I hate CSS.
+   */
   table-layout: fixed;
 }
 .footer-wrapper-collapse {
