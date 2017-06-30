@@ -112,7 +112,7 @@ private:
 
 The point is that the `Logger::get_instance` routine above wasn't thread-safe
 until C++11.
-Imagine what might happen if `Logger`s constructor takes some time to
+Imagine what might happen if `Logger`'s constructor takes some time to
 initialize the instance.
 If a couple of threads then call `get_instance`, the first thread might begin
 the initialization process, making the other thread believe that the instance
