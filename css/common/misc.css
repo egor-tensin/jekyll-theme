@@ -1,4 +1,4 @@
-/* Utility classes to prevent blocks from expanding unreasonably. }
+/* Utility classes to prevent blocks from expanding unreasonably. */
 .wide-enough {
   max-width: 400px;
 }
