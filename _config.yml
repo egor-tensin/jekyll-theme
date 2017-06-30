@@ -22,7 +22,8 @@ markdown: kramdown
 
 kramdown:
   syntax_highlighter_opts:
-    disable: true
+    span:
+      disable: true
 
 bootstrap_version: 3.3.7
 jquery_version: 1.12.4
