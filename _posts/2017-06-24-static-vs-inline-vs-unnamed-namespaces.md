@@ -69,8 +69,8 @@ from `shared()`.
 {% include snippets/section.html section_id='static' %}
 
 In C, this is the only way to share function definitions between translation
-units (apart from declaring a function in a header file and putting its
-definition to a .c file).
+units (apart from the usual way of declaring a function in a header file and
+putting its definition to a .c file).
 
 ### Properties
 
@@ -81,8 +81,8 @@ addresses, their local static variables are independent, etc.
 * If different translation units define different functions with the same
 name using the `static` specifier, each unit can use its function without any
 issues.
-This might seem like an trivial claim, but there are issues with other
-approaches that are discussed below.
+This might seem like an trivial claim, but other approaches sometimes disallow
+this, which is discussed below.
 
 `inline`
 --------
@@ -135,8 +135,8 @@ No warnings/errors are emitted, making the situation truly disturbing.
 I tested this with GNU compiler version 5.4.0 and Microsoft compiler version
 19.00.24210.
 
-This behaviour can be easily fixed by either making these functions `static`
-or by using unnamed namespaces (see below).
+This behaviour can be easily fixed either by making these functions `static` or
+by using unnamed namespaces (see below).
 
 ### Properties
 
