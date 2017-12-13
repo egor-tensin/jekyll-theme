@@ -124,6 +124,13 @@ $ ./b2 toolset=gcc-mingw              \
 ...
 ```
 
+The "user" configuration file above stopped working at some point; not sure as
+to who's to blame, Cygwin or Boost.
+If you see something like "`error: provided command 'i686-w64-mingw32-g++' not
+found`", add ".exe" to the binary name above, so that the whole file reads
+"`using gcc : : i686-w64-mingw32-g++.exe ;`".
+{: .alert .alert-info }
+
 ### x64
 
 Notice the two major differences from the x86 example:
@@ -157,6 +164,13 @@ $ ./b2 toolset=gcc-mingw              \
     ...
 ...
 ```
+
+The "user" configuration file above stopped working at some point; not sure as
+to who's to blame, Cygwin or Boost.
+If you see something like "`error: provided command 'x86_64-w64-mingw32-g++'
+not found`", add ".exe" to the binary name above, so that the whole file reads
+"`using gcc : : x86_64-w64-mingw32-g++.exe ;`".
+{: .alert .alert-info }
 
 Usage in CMake
 --------------
