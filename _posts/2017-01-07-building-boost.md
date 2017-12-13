@@ -211,8 +211,8 @@ $ cmake -G "Unix Makefiles"                    \
     -D CMAKE_BUILD_TYPE=Debug                  \
     -D CMAKE_C_COMPILER=i686-w64-mingw32-gcc   \
     -D CMAKE_CXX_COMPILER=i686-w64-mingw32-g++ \
-    -D BOOST_ROOT=/cygdrive/d/workspace/third-party/boost_1_61_0/mingw                     \
-    -D BOOST_LIBRARYDIR=/cygdrive/d/workspace/third-party/boost_1_61_0/mingw/x86/debug/lib \
+    -D BOOST_ROOT=/cygdrive/d/workspace/third-party/boost_1_61_0/mingw                           \
+    -D BOOST_LIBRARYDIR=/cygdrive/d/workspace/third-party/boost_1_61_0/mingw/stage/x86/debug/lib \
     -D Boost_USE_STATIC_LIBS=ON                \
     ...
 ```
@@ -227,8 +227,8 @@ $ cmake -G "Unix Makefiles"                      \
     -D CMAKE_BUILD_TYPE=Debug                    \
     -D CMAKE_C_COMPILER=x86_64-w64-mingw32-gcc   \
     -D CMAKE_CXX_COMPILER=x86_64-w64-mingw32-g++ \
-    -D BOOST_ROOT=/cygdrive/d/workspace/third-party/boost_1_61_0/mingw                     \
-    -D BOOST_LIBRARYDIR=/cygdrive/d/workspace/third-party/boost_1_61_0/mingw/x64/debug/lib \
+    -D BOOST_ROOT=/cygdrive/d/workspace/third-party/boost_1_61_0/mingw                           \
+    -D BOOST_LIBRARYDIR=/cygdrive/d/workspace/third-party/boost_1_61_0/mingw/stage/x64/debug/lib \
     -D Boost_USE_STATIC_LIBS=ON                  \
     ...
 ```
