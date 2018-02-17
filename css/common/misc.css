@@ -44,3 +44,7 @@ code {
   padding: 0;
   background-color: inherit;
 }
+/* Don't color category links blue. */
+.text-muted a {
+  color: inherit;
+}

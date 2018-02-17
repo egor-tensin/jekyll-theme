@@ -4,6 +4,7 @@ layout: post
 excerpt: >
   Should I use <code>static</code>, <code>inline</code> or unnamed namespaces
   for function definitions?
+category: C++
 custom_css:
   - snippets.css
   - syntax.css
@@ -154,7 +155,7 @@ name, but are defined in different translation units.
 {: .alert .alert-info }
 
 `namespace {`
-------------------
+-------------
 
 With respect to function definitions, unnamed namespaces are, according to my
 understanding, quite similar to the `static` keyword.

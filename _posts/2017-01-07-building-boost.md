@@ -4,6 +4,7 @@ layout: post
 excerpt: >
   This post describes the process of building Boost on Windows using either
   Visual Studio or the combination of Cygwin + MinGW-w64.
+category: C++
 custom_css:
   - syntax.css
 ---
