@@ -2,8 +2,8 @@
 title: Peculiar Haskell indentation
 layout: post
 excerpt: >
-  An explanation of how Haskell indentation works inside <code>do</code>
-  blocks.
+  An explanation for nasty <code>parse error</code>s I used to get for nested
+  <code>do</code> blocks.
 category: Haskell
 custom_css:
   - syntax.css
