@@ -2,8 +2,8 @@
 title: static vs. inline vs. namespace&nbsp;{
 layout: post
 excerpt: >
-  Should I use <code>static</code>, <code>inline</code> or unnamed namespaces
-  for function definitions?
+  Should I use `static`, `inline` or unnamed namespaces for function
+  definitions?
 category: C++
 custom_css:
   - snippets.css

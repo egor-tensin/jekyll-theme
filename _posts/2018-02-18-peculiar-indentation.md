@@ -2,8 +2,8 @@
 title: Peculiar Haskell indentation
 layout: post
 excerpt: >
-  An explanation for nasty <code>parse error</code>s I used to get for nested
-  <code>do</code> blocks.
+  An explanation for nasty `parse error`s I used to get for nested `do`
+  blocks.
 category: Haskell
 custom_css:
   - syntax.css
