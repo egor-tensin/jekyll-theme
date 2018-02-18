@@ -45,6 +45,6 @@ code {
   background-color: inherit;
 }
 /* Don't color category links blue. */
-.text-muted a {
+.text-muted a.category {
   color: inherit;
 }
