@@ -1,8 +1,8 @@
-C++ notes
-=========
+Egor's blog
+===========
 
-Personal C++ notes.
-Hosted on [GitHub Pages] at https://egor-tensin.github.io/cpp-notes/.
+Egor's blog on programming.
+Hosted on [GitHub Pages] at https://egor-tensin.github.io/blog/.
 
 [GitHub Pages]: https://pages.github.com
 
@@ -55,7 +55,7 @@ of external CSS stylesheets and JavaScript files are included instead of the
 from the posts,
 * sets `baseurl` to an empty string so that the website can be accessed from
 local web server's root directory (i.e. from http://localhost:4000/ instead of
-http://localhost:4000/cpp-notes/).
+http://localhost:4000/blog/).
 
 ### Access via file://
 

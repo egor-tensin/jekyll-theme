@@ -32,10 +32,10 @@ html5shiv_version: 3.7.3
 respond_version: 1.4.2
 
 project:
-  name: C++ notes
-  description: Personal C++ notes
-baseurl: /cpp-notes
-repository: egor-tensin/cpp-notes
+  name: Blog
+  description: Egor's blog on programming
+baseurl: /blog
+repository: egor-tensin/blog
 personal_info:
   name: Egor Tensin
   email: Egor.Tensin@gmail.com
