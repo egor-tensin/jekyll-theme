@@ -8,7 +8,7 @@ category: Haskell
 custom_css:
   - syntax.css
 ---
-A Haskell indentation pitfall I've fallen into.
+I've fallen into a Haskell indentation pitfall.
 I think it must be common, so I'm describing it here.
 
 The problem is that indentation rules in `do` blocks are not intuitive to me.
@@ -74,8 +74,7 @@ foo4 = do
 
 The truth is, the rules for desugaring `do` blocks are surprisingly simple and
 literal.
-First, GHC inserts semicolons according to the rules described here:
-https://en.wikibooks.org/wiki/Haskell/Indentation#Explicit_characters_in_place_of_indentation.
+GHC inserts semicolons according to the rules [found in the Wikibook].
 So it inserts semicolons between the `alloca`s on the same level, so `foo4`
 becomes:
 
@@ -92,6 +91,8 @@ foo4 = do
         }
     }
 ```
+
+[found in the Wikibook]: https://en.wikibooks.org/wiki/Haskell/Indentation#Explicit_characters_in_place_of_indentation
 
 The semicolons after `->` are clearly invalid Haskell syntax, hence the error.
 
