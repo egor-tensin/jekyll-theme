@@ -8,7 +8,7 @@
   {% include snippets/header.html snippet_path=i section_id=include.section_id %}
 
 {% capture snippet %}
-```c++
+```{{ page.snippets_language }}
 {% include_relative {{ page.snippets_root_directory }}/{{ i }} %}```
 {% endcapture %}
 
