@@ -12,7 +12,10 @@ root_page: true
 {% else %}
   {% for post in paginator.posts %}
     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-    <p class="text-muted"><span class="glyphicon glyphicon-time"></span>&nbsp;Posted on {{ post.date | date_to_long_string }}{% if post.category %} in <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a href="{{ site.baseurl }}/{{ post.category | slugify: 'pretty' }}/">{{ post.category }}</a>{% endif %}</p>
+    <p class="text-muted">
+      <span class="glyphicon glyphicon-time"></span>&nbsp;Posted on {{ post.date | date_to_long_string }}
+      {%- if post.category %} in <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a href="{{ site.baseurl }}/{{ post.category | slugify: 'pretty' }}/">{{ post.category }}</a>{% endif %}
+    </p>
     <p>{{ post.excerpt }}</p>
     <hr/>
   {% endfor %}
