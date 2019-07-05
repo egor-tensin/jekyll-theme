@@ -8,7 +8,7 @@ category: C++
 custom_css:
   - snippets.css
   - syntax.css
-snippets_root_directory: snippets/static_vs_inline_vs_unnamed_namespaces/
+snippets_root_directory: snippets/static_vs_inline_vs_unnamed_namespaces
 snippets_language: c++
 snippets:
   static:
