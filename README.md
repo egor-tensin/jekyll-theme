@@ -60,6 +60,30 @@ One easy workaround is to `wget` the website and convert the links:
 
     wget --convert-links --recursive http://localhost:4000/
 
+### Typesetting math
+
+[MathJax] can be used to typeset mathematics using LaTeX.
+To use MathJax, set `mathjax` to `true` in page's front matter.
+Then you can do things like this:
+
+```
+This is an inline formula: $$y = kx + b$$.
+This is a formula in a separate block:
+
+$$
+y = kx + b
+$$
+```
+
+MathJax version 3 is used, which is unsupported by Kramdown (which produces
+`<script type="math/tex; ..."` tags, suitable for MathJax 2.
+This is why `math_engine` is set to `null` in _config.yml, making Kramdown
+output block formulas wrapped in `$$` and inline formulas in `$` respectively.
+MathJax is additionally customized to recognize `$` as an inline formula
+delimiter in _includes/common/mathjax.html.
+
+[MathJax]: https://www.mathjax.org/
+
 License
 -------
 
