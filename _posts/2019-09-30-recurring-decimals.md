@@ -6,6 +6,8 @@ excerpt: >
 category: Math
 mathjax: true
 ---
+{% include common/mathjax_workaround.md %}
+
 First, let's determine that
 
 $$
@@ -21,7 +23,7 @@ $$
 0.(9) = 1
 $$
 
-This is counter-intuitive, but demonstrably true.
+This may seem counter-intuitive, but demonstrably true.
 If $$0.(9) \neq 1$$, then $$\exists n \in \reals: 0.(9) < n < 1$$.
 To put it another way, there must be a number greater than 0.(9) and lesser
 than 1, equal to neither.

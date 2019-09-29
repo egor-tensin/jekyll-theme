@@ -75,14 +75,29 @@ y = kx + b
 $$
 ```
 
-MathJax version 3 is used, which is unsupported by Kramdown (which produces
-`<script type="math/tex; ..."` tags, suitable for MathJax 2.
-This is why `math_engine` is set to `null` in _config.yml, making Kramdown
-output block formulas wrapped in `$$` and inline formulas in `$` respectively.
-MathJax is additionally customized to recognize `$` as an inline formula
-delimiter in _includes/common/mathjax.html.
-
 [MathJax]: https://www.mathjax.org/
+
+#### GitHub workarounds
+
+MathJax version 3 is used, which is unsupported by Kramdown (which produces
+`<script type="math/tex; ..."` tags, suitable only for MathJax 2.
+This is why `math_engine` is set to `null` in _config.yml, making Kramdown
+output block formulas wrapped in `$$` and inline formulas in `$` respectively
+([inside `<span class="kdmath">` elements][kramdown issue]).
+Because if this, MathJax is additionally customized to recognize `$` as an
+inline formula delimiter in _includes/common/mathjax.html.
+
+GitHub Pages [helpfully overrides] the `math_engine` setting in your
+_config.yml, hardcoding it to `mathjax` instead of `null` (there's a related
+[pull request]).
+I couldn't find a better way than to override the setting in the markdown
+document itself using
+
+    {::options math_engine="+nil+" /}
+
+[kramdown issue]: https://github.com/gettalong/kramdown/issues/342
+[helpfully overrides]: https://help.github.com/en/articles/configuring-jekyll
+[pull request]: https://github.com/github/pages-gem/pull/644
 
 License
 -------
