@@ -35,6 +35,11 @@ defaults:
       type: notes
     values:
       layout: note
+  - scope:
+      path: categories
+      type: pages
+    values:
+      layout: category
 
 excerpt_separator: ""
 include_comments: true
