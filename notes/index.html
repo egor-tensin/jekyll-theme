@@ -7,13 +7,13 @@ navbar_link: <span class="glyphicon glyphicon-search"></span>&nbsp;Notes
 navbar_priority: 3
 ---
 <h1>{{ page.title }}</h1>
-<hr>
+<hr/>
 {% if site.notes.size != 0 %}
-  <p>This is a complete list of "notes" I maintain.</p>
+  <p>This is a complete list of notes I maintain for my personal usage.</p>
   <ul>
-  {% for note in site.notes %}
-    <li><a href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a></li>
-  {% endfor %}
+    {% for note in site.notes %}
+      <li><a href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a></li>
+    {% endfor %}
   </ul>
 {% else %}
   <p>No notes have been added yet.</p>
