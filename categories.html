@@ -4,6 +4,7 @@ title: Categories
 groups:
   - navbar
 navbar_link: <span class="glyphicon glyphicon-th-list"></span>&nbsp;Categories
+navbar_priority: 2
 ---
 {% for category in site.categories %}
   <h1><a class="category" href="{{ site.baseurl }}{{ category[0] | slugify: 'pretty' }}">{{ category[0] }}</a></h1>

@@ -11,7 +11,8 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        {% for node in site.pages %}
+        {% assign page_list = site.pages | sort: "navbar_priority" %}
+        {% for node in page_list %}
           {% if node.root_page %}
             {% if navbar_has_root_page %}
               {% continue %}
