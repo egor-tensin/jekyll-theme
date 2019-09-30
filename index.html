@@ -14,7 +14,7 @@ root_page: true
     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
     <p class="text-muted">
       <span class="glyphicon glyphicon-time"></span>&nbsp;Posted on {{ post.date | date: '%-d %B %Y' }}
-      {%- if post.category %} in <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ site.baseurl }}/{{ post.category | slugify: 'pretty' }}/">{{ post.category }}</a>{% endif %}
+      {%- if post.category %} in <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ site.baseurl }}/categories/{{ post.category | slugify: 'pretty' }}/">{{ post.category }}</a>{% endif %}
     </p>
     {{ post.excerpt | markdownify }}
     <hr/>
