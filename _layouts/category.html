@@ -2,7 +2,7 @@
 layout: default
 ---
 <h1>Category: {{ page.title }}</h1>
-<p>This is a complete list of posts in the "{{ page.category }}" category.</p>
+<p>This is a list of posts in the "{{ page.category }}" category.</p>
 {% if site.categories[page.category].size > 0 %}
   <ul>
     {% for post in site.categories[page.category] %}
@@ -10,3 +10,4 @@ layout: default
     {% endfor %}
   </ul>
 {% endif %}
+<p>For a complete list of posts grouped by category, please see <a href="{{ site.baseurl }}/categories.html">this page</a>.</p>

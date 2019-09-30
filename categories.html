@@ -1,0 +1,15 @@
+---
+layout: default
+title: Categories
+groups:
+  - navbar
+navbar_link: <span class="glyphicon glyphicon-th-list"></span>&nbsp;Categories
+---
+{% for category in site.categories %}
+  <h1><a class="category" href="{{ site.baseurl }}{{ category[0] | slugify: 'pretty' }}">{{ category[0] }}</a></h1>
+  <ul>
+    {% for post in category[1] %}
+      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} &mdash; {{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
