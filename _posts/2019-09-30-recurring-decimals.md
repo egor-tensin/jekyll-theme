@@ -1,7 +1,7 @@
 ---
 title: Recurring decimals
 excerpt: >
-  Noob thoughts about recurring decimals.
+  Eighth-grader thoughts on recurring decimals.
 category: Math
 mathjax: true
 ---
@@ -90,8 +90,4 @@ $$
 \end{align*}
 $$
 
-Ergo,
-
-$$
-\pq = 0.(\xs)
-$$
+Finally, $$0.(\xs) \times \qp = 1 \implies \pq = 0.(\xs)$$.
