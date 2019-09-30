@@ -1,6 +1,5 @@
 ---
 title: Recurring decimals
-layout: post
 excerpt: >
   Noob thoughts about recurring decimals.
 category: Math

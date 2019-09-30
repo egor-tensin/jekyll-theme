@@ -1,6 +1,5 @@
 ---
 title: static vs. inline vs. namespace&nbsp;{
-layout: post
 excerpt: >
   Should I use `static`, `inline` or unnamed namespaces for function
   definitions?

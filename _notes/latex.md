@@ -1,5 +1,4 @@
 ---
-layout: note
 title: Basic LaTeX document
 custom_css:
   - syntax.css

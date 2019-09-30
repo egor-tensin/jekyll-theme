@@ -1,5 +1,4 @@
 ---
-layout: note
 title: Markdown style guide
 ---
 

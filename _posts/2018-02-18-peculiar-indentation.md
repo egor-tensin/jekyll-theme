@@ -1,6 +1,5 @@
 ---
 title: Peculiar Haskell indentation
-layout: post
 excerpt: >
   An explanation for nasty `parse error`s I used to get for nested `do`
   blocks.

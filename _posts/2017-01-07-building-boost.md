@@ -1,6 +1,5 @@
 ---
 title: Building Boost on Windows
-layout: post
 excerpt: >
   This post describes the process of building Boost on Windows using either
   Visual Studio or the combination of Cygwin + MinGW-w64.

@@ -1,5 +1,4 @@
 ---
-layout: note
 title: GNU bash
 ---
 (Associative) arrays
