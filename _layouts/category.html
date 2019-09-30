@@ -1,18 +1,12 @@
-{% include common/header.html %}
-<div class="row">
-  <div class="col-md-8">
-    <h1>Category: {{ page.title }}</h1>
-    <p>This is a complete list of posts in the "{{ page.category }}" category.</p>
-    {% if site.categories[page.category].size > 0 %}
-      <ul>
-        {% for post in site.categories[page.category] %}
-          <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} &mdash; {{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </div>
-  <div class="col-md-4">
-    {% include common/sidebar.html %}
-  </div>
-</div>
-{% include common/footer.html %}
+---
+layout: default
+---
+<h1>Category: {{ page.title }}</h1>
+<p>This is a complete list of posts in the "{{ page.category }}" category.</p>
+{% if site.categories[page.category].size > 0 %}
+  <ul>
+    {% for post in site.categories[page.category] %}
+      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }} &mdash; {{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}

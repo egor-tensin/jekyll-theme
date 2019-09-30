@@ -1,16 +1,10 @@
-{% include common/header.html %}
-<div class="row">
-  <div class="col-md-8">
-    <h1>{{ page.title }}</h1>
-    <p class="text-muted">
-      <span class="glyphicon glyphicon-time"></span>&nbsp;Posted on {{ page.date | date: '%-d %B %Y' }}
-      {%- if page.category %} in <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ site.baseurl }}/{{ page.category | slugify: 'pretty' }}/">{{ page.category }}</a>{% endif %}
-    </p>
-    {{ content }}
-    <hr/>
-  </div>
-  <div class="col-md-4">
-    {% include common/sidebar.html %}
-  </div>
-</div>
-{% include common/footer.html %}
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+<p class="text-muted">
+  <span class="glyphicon glyphicon-time"></span>&nbsp;Posted on {{ page.date | date: '%-d %B %Y' }}
+  {%- if page.category %} in <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ site.baseurl }}/{{ page.category | slugify: 'pretty' }}/">{{ page.category }}</a>{% endif %}
+</p>
+{{ content }}
+<hr/>
