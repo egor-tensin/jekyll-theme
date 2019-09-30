@@ -16,6 +16,7 @@ paginate: 10
 collections:
   notes:
     output: true
+    sort_by: title # Doesn't work?
 
 defaults:
   - scope:
