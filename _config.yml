@@ -13,6 +13,10 @@ exclude:
 
 paginate: 10
 
+collections:
+  notes:
+    output: true
+
 defaults:
   - scope:
       path: ""
