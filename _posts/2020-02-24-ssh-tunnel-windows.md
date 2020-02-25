@@ -20,7 +20,7 @@ requests to the SSH server.
 Say, you have access to SSH server `gateway` on port 22, and you want to gain
 access to HTTPS server `dest` on port 443, which is only accessible from the
 network both it and the SSH server belong to.
-You can the run something like
+You can then run something like
 
 ```
 ssh -L 4433:dest:443 gateway -p 22
