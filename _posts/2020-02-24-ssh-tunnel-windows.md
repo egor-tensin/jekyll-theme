@@ -11,7 +11,7 @@ client (`ssh`) with an access to a SSH server.
 You can then access any port on any host your SSH server has access to.
 It works like this:
 
-* your SSH client establishes a connection with the SSH server,
+* your SSH client establishes a connection to the SSH server,
 * the client asks the server to forward incoming requests to the destination
 host,
 * the client listens to the proxy port on the local machine, and forwards
