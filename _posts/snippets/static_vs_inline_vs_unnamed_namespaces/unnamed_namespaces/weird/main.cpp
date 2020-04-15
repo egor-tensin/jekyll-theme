@@ -2,15 +2,15 @@
 
 #include <iostream>
 
-struct Test
-{
-    Test() { std::cout << "main.cpp: Test::Test()\n"; }
+struct Test {
+    Test() {
+        std::cout << "main.cpp: Test::Test()\n";
+    }
 
     int x = 1;
 };
 
-int main()
-{
+int main() {
     Test test;
     std::cout << test.x << '\n';
     another();

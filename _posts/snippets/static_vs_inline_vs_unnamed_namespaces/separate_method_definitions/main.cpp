@@ -1,8 +1,7 @@
 #include "another.hpp"
 #include "shared.hpp"
 
-int main()
-{
+int main() {
     Test test;
     another();
     return 0;

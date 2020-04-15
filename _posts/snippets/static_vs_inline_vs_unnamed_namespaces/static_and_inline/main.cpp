@@ -3,8 +3,7 @@
 
 #include <iostream>
 
-int main()
-{
+int main() {
     std::cout << shared() << '\n';
     std::cout << proxy() << '\n';
     return 0;

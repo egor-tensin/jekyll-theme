@@ -2,13 +2,11 @@
 
 #include <iostream>
 
-inline void shared()
-{
+inline void shared() {
     std::cout << "main.cpp: shared()\n";
 }
 
-int main()
-{
+int main() {
     shared();
     another();
     return 0;

@@ -1,7 +1,6 @@
 #include "another.hpp"
 #include "shared.hpp"
 
-void another()
-{
+void another() {
     Test test;
 }

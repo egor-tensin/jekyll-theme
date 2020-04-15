@@ -2,17 +2,18 @@
 
 #include <iostream>
 
-namespace
-{
-    struct Test
-    {
-        Test() { std::cout << "another.cpp: Test::Test()\n"; }
+namespace {
 
-        float y = 1.;
-    };
+struct Test {
+    Test() {
+        std::cout << "another.cpp: Test::Test()\n";
+    }
+
+    float y = 1.;
+};
+
 }
 
-void another()
-{
+void another() {
     Test test;
 }

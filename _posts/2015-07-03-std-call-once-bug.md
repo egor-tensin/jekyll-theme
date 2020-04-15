@@ -36,11 +36,9 @@ using C++11 facilities like this:
 #include <mutex>
 
 template <typename Derived>
-class Singleton
-{
+class Singleton {
 public:
-    static Derived& get_instance()
-    {
+    static Derived& get_instance() {
         std::call_once(initialized_flag, &initialize_instance);
         return Derived::get_instance_unsafe();
     }
@@ -49,15 +47,13 @@ protected:
     Singleton() = default;
     ~Singleton() = default;
 
-    static Derived& get_instance_unsafe()
-    {
+    static Derived& get_instance_unsafe() {
         static Derived instance;
         return instance;
     }
 
 private:
-    static void initialize_instance()
-    {
+    static void initialize_instance() {
         Derived::get_instance_unsafe();
     }
 
@@ -76,8 +72,7 @@ Now other classes can inherit from `Singleton`, implementing the singleton
 pattern effortlessly:
 
 ```c++
-class Logger : public Singleton<Logger>
-{
+class Logger : public Singleton<Logger> {
 private:
     Logger() = default;
     ~Logger() = default;
@@ -93,11 +88,9 @@ trickery, and the implementation would be much simpler, i.e. something like
 this:
 
 ```c++
-class Logger
-{
+class Logger {
 public:
-    static Logger& get_instance()
-    {
+    static Logger& get_instance() {
         static Logger instance;
         return instance;
     }
@@ -146,18 +139,15 @@ constructor, and everything looked fine at first glance.
 #include <chrono>
 #include <thread>
 
-class Logger : public Singleton<Logger>
-{
+class Logger : public Singleton<Logger> {
 public:
-    Logger& operator<<(const char* msg)
-    {
+    Logger& operator<<(const char* msg) {
         // Actual logging is stripped for brevity.
         return *this;
     }
 
 private:
-    Logger()
-    {
+    Logger() {
         // Opening log files, etc.
         std::this_thread::sleep_for(std::chrono::seconds{3});
     }
@@ -167,11 +157,9 @@ private:
     friend class Singleton<Logger>;
 };
 
-class Duke : public Singleton<Duke>
-{
+class Duke : public Singleton<Duke> {
 private:
-    Duke()
-    {
+    Duke() {
         Logger::get_instance() << "started Duke's initialization";
         // It's a lot of work to be done.
         std::this_thread::sleep_for(std::chrono::seconds{10});
@@ -191,25 +179,23 @@ Like in this example:
 ```c++
 #include <thread>
 
-namespace
-{
-    void get_logger()
-    {
-        entered(__FUNCTION__);
-        Logger::get_instance();
-        exiting(__FUNCTION__);
-    }
+namespace {
 
-    void get_duke()
-    {
-        entered(__FUNCTION__);
-        Duke::get_instance();
-        exiting(__FUNCTION__);
-    }
+void get_logger() {
+    entered(__FUNCTION__);
+    Logger::get_instance();
+    exiting(__FUNCTION__);
 }
 
-int main()
-{
+void get_duke() {
+    entered(__FUNCTION__);
+    Duke::get_instance();
+    exiting(__FUNCTION__);
+}
+
+}
+
+int main() {
     std::thread t1{&get_duke};
     std::thread t2{&get_logger};
     t1.join();
