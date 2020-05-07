@@ -9,12 +9,12 @@
 
     {% include common/bootstrap_css.html %}
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/common/footer.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/common/misc.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/common/footer.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/common/misc.css">
 
     {% if page.custom_css %}
       {% for css in page.custom_css %}
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ css }}"/>
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ css }}"/>
       {% endfor %}
     {% endif %}
 
