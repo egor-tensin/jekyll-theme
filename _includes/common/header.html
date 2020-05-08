@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ page.title }} - {{ site.project.name }} - {{ site.personal_info.name }}</title>
+    {% if site.project.name %}
+      <title>{{ page.title }} - {{ site.project.name }} - {{ site.personal_info.name }}</title>
+    {% else %}
+      <title>{{ page.title }} - {{ site.personal_info.name }}</title>
+    {% endif %}
 
     {% include common/bootstrap_css.html %}
 
@@ -23,8 +27,11 @@
   </head>
   <body>
     <div class="top-level-footer-wrapper">
-      <div class="footer-wrapper-collapse">
-        {% include common/navbar.html %}
-      </div>
+      {% if site.hide_navbar or page.hide_navbar %}
+      {% else %}
+        <div class="footer-wrapper-collapse">
+          {% include common/navbar.html %}
+        </div>
+      {% endif %}
       <div class="footer-wrapper-expand">
         <div class="container">
