@@ -1,4 +1,9 @@
 {% if site.posts.size != 0 %}
+  {% if paginator.page == 1 %}
+    {% assign page1_url = page.url %}
+  {% else %}
+    {% assign page1_url = page.url | split: '/' | pop | join: '/' | append: '/' %}
+  {% endif %}
 <ul class="pagination">
   {% if paginator.previous_page %}
     <li><a href="{{ site.baseurl }}{{ paginator.previous_page_path }}"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Prev</a></li>
@@ -9,7 +14,7 @@
     {% if page_number == paginator.page %}
       <li class="active"><a href="#">{{ page_number }}</a></li>
     {% elsif page_number == 1 %}
-      <li><a href="{{ site.baseurl }}/">{{ page_number }}</a></li>
+      <li><a href="{{ site.baseurl }}{{ page1_url }}">{{ page_number }}</a></li>
     {% else %}
       <li><a href="{{ site.baseurl }}{{ site.paginate_path | replace: ':num', page_number }}">{{ page_number }}</a></li>
     {% endif %}
