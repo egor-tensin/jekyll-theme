@@ -1,0 +1,17 @@
+{% if site.posts.size == 0 %}
+  <p class="h3">Sorry, no posts have been added yet.</p>
+  <hr/>
+{% else %}
+  {% for post in paginator.posts %}
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p class="text-muted">
+      <span class="glyphicon glyphicon-time"></span>&nbsp;Posted on {{ post.date | date: '%-d %B %Y' }}
+      {%- if post.category %} in <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ '/categories/' | relative_url }}{{ post.category | slugify: 'pretty' }}/">{{ post.category }}</a>{% endif %}
+    </p>
+    {{ post.excerpt | markdownify }}
+    <hr/>
+  {% endfor %}
+  <div class="text-center">
+    {% include common/paginator.html %}
+  </div>
+{% endif %}
