@@ -13,14 +13,7 @@
 
     {% include common/bootstrap_css.html %}
 
-    <link rel="stylesheet" href="{{ '/assets/css/common/footer.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/common/misc.css' | relative_url }}">
-
-    {% if page.custom_css %}
-      {% for css in page.custom_css %}
-        <link rel="stylesheet" href="{{ '/assets/css/' | relative_url }}{{ css }}"/>
-      {% endfor %}
-    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
     {% include common/ie_compat.html %}
     {% include common/mathjax.html %}
