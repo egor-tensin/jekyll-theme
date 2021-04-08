@@ -1,12 +1,7 @@
----
-layout: default
----
-<h1>{{ page.title }}</h1>
-<hr/>
-<p>This is a list of posts in category "{{ page.category }}".</p>
-{% if site.categories[page.category].size > 0 %}
+<p>This is a list of posts in category "{{ include.category }}".</p>
+{% if site.categories[include.category].size > 0 %}
   <ul>
-    {% for post in site.categories[page.category] %}
+    {% for post in site.categories[include.category] %}
       <li><a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }} &mdash; {{ post.title }}</a></li>
     {% endfor %}
   </ul>
