@@ -1,3 +1,11 @@
+/* It's the "autumn" Pygments theme. Grabbed this at [1]. You can also generate
+ * this using something like
+ *
+ *     pygmentize -S default -f html -a .highlight
+ *
+ * [1]: https://github.com/richleland/pygments-css/blob/c39da1d9e5f0f67a0117af6207bc50ee875ca3b7/autumn.css
+ */
+
 .highlight .hll { background-color: #ffffcc }
 .highlight  { background: #ffffff; }
 .highlight .c { color: #aaaaaa; font-style: italic } /* Comment */
