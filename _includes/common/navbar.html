@@ -11,20 +11,22 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        {% assign page_list = site.pages | sort: "navbar_priority" %}
+        {% assign page_list = site.pages | where_exp: "x","x.navbar_link" | sort: "navbar_priority" %}
         {% for node in page_list %}
-          {% if node.root_page %}
-            {% if navbar_has_root_page %}
+          {% if node.navbar_paginated %}
+            {% if navbar_has_paginated %}
               {% continue %}
             {% endif %}
-            {% assign navbar_has_root_page = true %}
+            {% assign navbar_has_paginated = true %}
           {% endif %}
-          {% if node.groups contains 'navbar' %}
-            {% if page.url == node.url %}
-              <li class="active"><a href="{{ node.url | relative_url }}" class="active">{{ node.navbar_link }}</a></li>
-            {% else %}
-              <li><a href="{{ node.url | relative_url }}">{{ node.navbar_link }}</a></li>
-            {% endif %}
+          {% assign link = node.navbar_link %}
+          {% if link == true %}
+            {% assign link = node.title %}
+          {% endif %}
+          {% if page.url == node.url %}
+            <li class="active"><a href="{{ node.url | relative_url }}" class="active">{{ link }}</a></li>
+          {% else %}
+            <li><a href="{{ node.url | relative_url }}">{{ link }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>
