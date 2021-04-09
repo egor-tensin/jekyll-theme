@@ -58,4 +58,4 @@ jobs:
         with:
           branch: gh-pages
           folder: _site
-          single-commit: 1
+          single-commit: true
