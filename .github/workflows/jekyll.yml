@@ -1,0 +1,61 @@
+name: Publish
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  bundler:
+    runs-on: ubuntu-18.04
+    name: Bundler
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+      - name: Install dependencies
+        run: bundle install --jobs=3 --retry=3
+      - name: jekyll build
+        run: bundle exec jekyll build --drafts
+
+  github_pages:
+    runs-on: ubuntu-18.04
+    name: github-pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+      - name: Install dependencies
+        run: |
+          rm -f -- Gemfile Gemfile.lock
+          gem install github-pages
+      - name: jekyll build
+        run: jekyll build
+
+  public:
+    needs: [github_pages]
+    runs-on: ubuntu-18.04
+    name: Publish
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+      - name: Install dependencies
+        run: bundle install --jobs=3 --retry=3
+      - name: Build
+        run: bundle exec jekyll build --baseurl /jekyll-theme
+      - name: Publish
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: _site
+          single-commit: 1
