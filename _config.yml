@@ -4,7 +4,6 @@ baseurl: ''
 exclude:
   - Gemfile
   - Gemfile.lock
-  - LICENSE.txt
   - README.md
 
 defaults:
@@ -45,6 +44,8 @@ settings:
   project:
     name: jekyll-theme
     description: jekyll-theme preview
+    license: MIT License
+    license_file: LICENSE.txt
   author:
     name: John Doe
     email: John.Doe@example.com
