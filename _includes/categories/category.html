@@ -6,4 +6,6 @@
     {% endfor %}
   </ul>
 {% endif %}
-<p>For a complete list of posts grouped by category, please see <a href="{{ '/all/' | relative_url }}">this page</a>.</p>
+{% if include.archive_link %}
+  <p>For a complete list of posts grouped by category, please see <a href="{{ include.archive_link | relative_url }}">this page</a>.</p>
+{% endif %}

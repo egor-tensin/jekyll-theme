@@ -1,6 +1,6 @@
 {% if site.categories.size != 0 %}
   {% for category in site.categories %}
-    <h1><a class="category" href="{{ '/categories/' | relative_url }}{{ category[0] | slugify: 'pretty' }}">{{ category[0] }}</a></h1>
+    <h1><a class="category" href="{{ '/' | relative_url }}{{ category[0] | slugify: 'pretty' }}/">{{ category[0] }}</a></h1>
     <hr/>
     <ul>
       {% for post in category[1] %}
