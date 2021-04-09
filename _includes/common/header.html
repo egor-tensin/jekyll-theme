@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% if site.project.name %}
-      <title>{{ page.title }} - {{ site.project.name }} - {{ site.personal_info.name }}</title>
+    {% if site.settings.project.name %}
+      <title>{{ page.title }} - {{ site.settings.project.name }} - {{ site.settings.author.name }}</title>
     {% else %}
-      <title>{{ page.title }} - {{ site.personal_info.name }}</title>
+      <title>{{ page.title }} - {{ site.settings.author.name }}</title>
     {% endif %}
 
     {% include common/bootstrap_css.html %}
@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="top-level-footer-wrapper">
-      {% if site.hide_navbar or page.hide_navbar %}
+      {% if site.settings.navbar.hide or page.navbar.hide %}
       {% else %}
         <div class="footer-wrapper-collapse">
           {% include common/navbar.html %}
