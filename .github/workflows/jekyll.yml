@@ -6,9 +6,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  bundler:
+  build:
     runs-on: ubuntu-18.04
-    name: Bundler
+    strategy:
+      matrix:
+        version: [Gemfile, latest]
+        include:
+          - {version: Gemfile, gemfile: Gemfile}
+          - {version: latest, gemfile: .ci/Gemfile}
+    name: 'Build / ${{ matrix.version }}'
+    env:
+      BUNDLE_GEMFILE: '${{ matrix.gemfile }}'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -16,30 +24,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.6'
-      - name: Install dependencies
-        run: bundle install --jobs=3 --retry=3
+          bundler-cache: true
       - name: jekyll build
         run: bundle exec jekyll build --drafts
 
-  github_pages:
-    runs-on: ubuntu-18.04
-    name: github-pages
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.6'
-      - name: Install dependencies
-        run: |
-          rm -f -- Gemfile Gemfile.lock
-          gem install github-pages
-      - name: jekyll build
-        run: jekyll build
-
   public:
-    needs: [github_pages]
+    needs: [build]
     runs-on: ubuntu-18.04
     name: Publish
     steps:
@@ -49,8 +39,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.6'
-      - name: Install dependencies
-        run: bundle install --jobs=3 --retry=3
+          bundler-cache: true
       - name: Build
         run: bundle exec jekyll build --baseurl /jekyll-theme
       - name: Publish
