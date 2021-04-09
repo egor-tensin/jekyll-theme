@@ -1,0 +1,59 @@
+# Jekyll
+baseurl: ''
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.txt
+  - README.md
+
+defaults:
+  - scope:
+      path: ''
+      type: pages
+    values:
+      layout: page
+      navbar_priority: 999
+  - scope:
+      path: ''
+      type: posts
+    values:
+      layout: post
+
+excerpt_separator: ''
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    span:
+      disable: true
+
+# Plugins
+plugins:
+  - jekyll-github-metadata
+  - jekyll-paginate
+
+# jekyll-github-metadata
+repository: egor-tensin/jekyll-theme
+# jekyll-paginate
+paginate: 10
+paginate_path: '/feed/page:num/'
+
+# Theme settings
+settings:
+  project:
+    name: jekyll-theme
+    description: jekyll-theme preview
+  author:
+    name: John Doe
+    email: John.Doe@example.com
+  navbar:
+    hide: false
+  3rdparty:
+    versions:
+      bootstrap: 3.3.7
+      jquery: 1.12.4
+      html5shiv: 3.7.3
+      respond: 1.4.2
+    minified: false
