@@ -19,12 +19,7 @@
         </footer>
       </div>
     </div>
-    {% if site.settings.3rdparty.minified %}
-      <script src="https://code.jquery.com/jquery-{{ site.settings.3rdparty.versions.jquery }}.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/{{ site.settings.3rdparty.versions.bootstrap }}/js/bootstrap.min.js"></script>
-    {% else %}
-      <script src="https://code.jquery.com/jquery-{{ site.settings.3rdparty.versions.jquery }}.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/{{ site.settings.3rdparty.versions.bootstrap }}/js/bootstrap.js"></script>
-    {% endif %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
   </body>
 </html>
