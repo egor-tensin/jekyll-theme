@@ -11,32 +11,37 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        {% assign page_list = site.pages | where_exp: "x","x.navbar_link" | sort: "navbar_priority" %}
+        {% assign page_list = site.pages | where_exp: "x","x.navbar.link" | sort: "navbar.priority" %}
         {% for node in page_list %}
           {% comment %}
             Whether a page should be present in the navbar is determined by
-            the presense of navbar_link in the page's front matter. It can be
+            the presense of navbar.link in the page's front matter. It can be
             true, in which case page's title is used, or it can be custom HTML.
 
             If the page is paginated, it should be marked as such by setting
-            navbar_paginated to true in its front matter. That way, /pageN/
+            navbar.paginated to true in its front matter. That way, /pageN/
             pages, which would have the same navbar_link, wouldn't appear in
             the navbar.
           {% endcomment %}
-          {% if node.navbar_paginated %}
+          {% if node.navbar.paginated %}
             {% if navbar_has_paginated %}
               {% continue %}
             {% endif %}
             {% assign navbar_has_paginated = true %}
           {% endif %}
-          {% assign link = node.navbar_link %}
+          {% assign link = node.navbar.link %}
           {% if link == true %}
             {% assign link = node.title %}
           {% endif %}
+          {% capture link %}{{ link | upcase }}{% endcapture %}
+          {% assign icon = node.navbar.icon %}
+          {% if icon %}
+            {% capture icon %}<span class="glyphicon glyphicon-{{ icon }}"></span>&nbsp;{% endcapture %}
+          {% endif %}
           {% if page.url == node.url %}
-            <li class="active"><a href="{{ node.url | relative_url }}" class="active">{{ link }}</a></li>
+            <li class="active"><a href="{{ node.url | relative_url }}" class="active">{{ icon }}{{ link }}</a></li>
           {% else %}
-            <li><a href="{{ node.url | relative_url }}">{{ link }}</a></li>
+            <li><a href="{{ node.url | relative_url }}">{{ icon }}{{ link }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>

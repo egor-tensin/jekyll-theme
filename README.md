@@ -59,11 +59,13 @@ Features
 Hide the navbar by setting either `site.settings.navbar.hide` or
 `page.navbar.hide` to `true`.
 
-Put a page on the navbar by defining setting `page.navbar_link` to `true` or
+Put a page on the navbar by defining setting `page.navbar.link` to `true` or
 a custom HTML string.
-Pages are sorted in the ascending order of `page.navbar_priority`.
-If a page on the navbar is paginated, set `page.navbar_paginated` to `true` so
+Pages are sorted in the ascending order of `page.navbar.priority`.
+If a page on the navbar is paginated, set `page.navbar.paginated` to `true` so
 that it doesn't appear two or more times.
+You can add a glyphicon to the navbar link by settings `page.navbar.icon` to
+something like `home`, `envelope`, etc.
 
 ### Post feed
 
