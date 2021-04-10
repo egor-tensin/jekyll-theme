@@ -1,50 +1,49 @@
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+<header>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
       <a class="navbar-brand" href="/">{{ site.settings.author.name }}</a>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        {% assign page_list = site.pages | where_exp: "x","x.navbar.link" | sort: "navbar.priority" %}
-        {% for node in page_list %}
-          {% comment %}
-            Whether a page should be present in the navbar is determined by
-            the presense of navbar.link in the page's front matter. It can be
-            true, in which case page's title is used, or it can be custom HTML.
-
-            If the page is paginated, it should be marked as such by setting
-            navbar.paginated to true in its front matter. That way, /pageN/
-            pages, which would have the same navbar_link, wouldn't appear in
-            the navbar.
-          {% endcomment %}
-          {% if node.navbar.paginated %}
-            {% if navbar_has_paginated %}
-              {% continue %}
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_content" aria-controls="navbar_content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar_content">
+        <ul class="navbar-nav mr-auto">
+          {% assign page_list = site.pages | where_exp: "x","x.navbar.link" | sort: "navbar.priority" %}
+          {% for node in page_list %}
+            {% comment %}
+              Whether a page should be present in the navbar is determined by
+              the presense of navbar.link in the page's front matter. It can be
+              true, in which case page's title is used, or it can be custom HTML.
+  
+              If the page is paginated, it should be marked as such by setting
+              navbar.paginated to true in its front matter. That way, /pageN/
+              pages, which would have the same navbar_link, wouldn't appear in
+              the navbar.
+            {% endcomment %}
+            {% if node.navbar.paginated %}
+              {% if navbar_has_paginated %}
+                {% continue %}
+              {% endif %}
+              {% assign navbar_has_paginated = true %}
             {% endif %}
-            {% assign navbar_has_paginated = true %}
-          {% endif %}
-          {% assign link = node.navbar.link %}
-          {% if link == true %}
-            {% assign link = node.title %}
-          {% endif %}
-          {% capture link %}{{ link | upcase }}{% endcapture %}
-          {% assign icon = node.navbar.icon %}
-          {% if icon %}
-            {% capture icon %}<span class="glyphicon glyphicon-{{ icon }}"></span>&nbsp;{% endcapture %}
-          {% endif %}
-          {% if page.url == node.url %}
-            <li class="active"><a href="{{ node.url | relative_url }}" class="active">{{ icon }}{{ link }}</a></li>
-          {% else %}
-            <li><a href="{{ node.url | relative_url }}">{{ icon }}{{ link }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+            {% assign link = node.navbar.link %}
+            {% if link == true %}
+              {% assign link = node.title %}
+            {% endif %}
+            {% capture link %}{{ link | upcase }}{% endcapture %}
+            {% assign icon = node.navbar.icon %}
+            {% if icon %}
+              {% capture icon %}<span class="glyphicon glyphicon-{{ icon }}"></span>&nbsp;{% endcapture %}
+            {% endif %}
+            {% if page.url == node.url %}
+              <li class="nav-item active">
+            {% else %}
+              <li class="nav-item">
+            {% endif %}
+                <a class="nav-link" href="{{ node.url | relative_url }}" class="active">{{ link }}</a>
+              </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>

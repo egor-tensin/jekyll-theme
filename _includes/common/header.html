@@ -15,20 +15,16 @@
     {% include common/mathjax.html %}
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
     {% if page.custom_css %}
       {% for css in page.custom_css %}
         <link rel="stylesheet" href="{{ '/assets/css/' | relative_url }}{{ css }}"/>
       {% endfor %}
     {% endif %}
   </head>
-  <body>
-    <div class="top-level-footer-wrapper">
-      {% if site.settings.navbar.hide or page.navbar.hide %}
-      {% else %}
-        <div class="footer-wrapper-collapse">
-          {% include common/navbar.html %}
-        </div>
-      {% endif %}
-      <div class="footer-wrapper-expand">
-        <div class="container">
+  <body class="d-flex flex-column min-vh-100">
+    {% if site.settings.navbar.hide or page.navbar.hide %}
+    {% else %}
+      {% include common/navbar.html %}
+    {% endif %}
+    <main role="main" class="flex-fill">
+      <div class="container">
