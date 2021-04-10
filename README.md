@@ -35,13 +35,6 @@ settings:
     email: John.Doe@example.com
   navbar:
     hide: false
-  3rdparty:
-    versions:
-      bootstrap: 3.4.1
-      jquery: 1.12.4
-      html5shiv: 3.7.3
-      respond: 1.4.2
-    minified: false
 ```
 
 Features
