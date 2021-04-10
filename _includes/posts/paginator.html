@@ -12,25 +12,27 @@
   {% else %}
     {% assign page1_url = page.url | split: '/' | pop | join: '/' | append: '/' %}
   {% endif %}
-<ul class="pagination">
-  {% if paginator.previous_page %}
-    <li><a href="{{ paginator.previous_page_path | relative_url }}"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Prev</a></li>
-  {% else %}
-    <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Prev</a></li>
-  {% endif %}
-  {% for page_number in (1..paginator.total_pages) %}
-    {% if page_number == paginator.page %}
-      <li class="active"><a href="#">{{ page_number }}</a></li>
-    {% elsif page_number == 1 %}
-      <li><a href="{{ page1_url | relative_url }}">{{ page_number }}</a></li>
+<nav aria-label="Post feed navigation">
+  <ul class="pagination">
+    {% if paginator.previous_page %}
+      <li class="page-item"><a class="page-link" aria-label="Previous" href="{{ paginator.previous_page_path | relative_url }}"><span aria-hidden="true">&laquo;</span></a></li>
     {% else %}
-      <li><a href="{{ site.paginate_path | replace: ':num', page_number | relative_url }}">{{ page_number }}</a></li>
+      <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#" tabindex="-1" aria-disabled="true"><span aria-hidden="true">&laquo;</span></a></li>
     {% endif %}
-  {% endfor %}
-  {% if paginator.next_page %}
-    <li><a href="{{ paginator.next_page_path | relative_url }}">Next&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a></li>
-  {% else %}
-    <li class="disabled"><a href="#">Next&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a></li>
-  {% endif %}
-</ul>
+    {% for page_number in (1..paginator.total_pages) %}
+      {% if page_number == paginator.page %}
+        <li class="page-item active"><a class="page-link" href="#">{{ page_number }}</a></li>
+      {% elsif page_number == 1 %}
+        <li class="page-item"><a class="page-link" href="{{ page1_url | relative_url }}">{{ page_number }}</a></li>
+      {% else %}
+        <li class="page-item"><a class="page-link" href="{{ site.paginate_path | replace: ':num', page_number | relative_url }}">{{ page_number }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}
+      <li class="page-item"><a class="page-link" aria-label="Next" href="{{ paginator.next_page_path | relative_url }}"><span aria-hidden="true">&raquo;</span></a></li>
+    {% else %}
+      <li class="page-item disabled"><a class="page-link" aria-label="Next" href="#" tabindex="-1" aria-disabled="true"><span aria-hidden="true">&raquo;</span></a></li>
+    {% endif %}
+  </ul>
+</nav>
 {% endif %}
