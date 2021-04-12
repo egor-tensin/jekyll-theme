@@ -1,8 +1,9 @@
-div.panel-body pre {
-  margin: 0;
-  border: none;
-  border-radius: 0 0 4px 4px;
-}
-div.panel-body {
+.snippet-body {
   padding: 0;
+}
+.snippet-body pre {
+  margin: 0;
+  padding: 1em;
+  border: none;
+  border-radius: 0 0 3px 3px;
 }
