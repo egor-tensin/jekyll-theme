@@ -32,7 +32,7 @@
             {% capture link %}{{ link | upcase }}{% endcapture %}
             {% assign icon = node.navbar.icon %}
             {% if icon %}
-              {% capture icon %}<span class="glyphicon glyphicon-{{ icon }}"></span>&nbsp;{% endcapture %}
+              {% capture icon %}<i class="fa fa-{{ icon }}"></i>&nbsp;{% endcapture %}
             {% endif %}
             {% if page.url == node.url %}
               <li class="nav-item active">
