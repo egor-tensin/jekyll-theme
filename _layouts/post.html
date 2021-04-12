@@ -3,8 +3,8 @@ layout: default
 ---
 <h1>{{ page.title }}</h1>
 <p class="text-muted">
-  <span class="glyphicon glyphicon-time"></span>&nbsp;Posted on {{ page.date | date: '%-d %B %Y' }}
-  {%- if page.category %} in <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ '/' | relative_url }}{{ page.category | slugify: 'pretty' }}/">{{ page.category }}</a>{% endif %}
+  <i class="fa fa-clock-o"></i>&nbsp;Posted on {{ page.date | date: '%-d %B %Y' }}
+  {%- if page.category %} in <i class="fa fa-folder-open"></i>&nbsp;<a class="category" href="{{ '/' | relative_url }}{{ page.category | slugify: 'pretty' }}/">{{ page.category }}</a>{% endif %}
 </p>
 {{ content }}
 <hr/>
