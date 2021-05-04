@@ -7,13 +7,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
     strategy:
       matrix:
         version: [Gemfile, latest]
         include:
           - {version: Gemfile, gemfile: Gemfile}
           - {version: latest, gemfile: .ci/Gemfile}
+    runs-on: ubuntu-18.04
     name: 'Build / ${{ matrix.version }}'
     env:
       BUNDLE_GEMFILE: '${{ matrix.gemfile }}'
