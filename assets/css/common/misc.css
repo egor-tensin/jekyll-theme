@@ -19,15 +19,15 @@ span.badge {
   margin-left: .5em;
 }
 /* Add horizontal scrollbars to <pre>s and don't wrap the code inside. */
-pre {
+/*pre {
   overflow-x: auto;
 }
 pre code {
   white-space: pre;
   word-wrap: normal;
-}
+}*/
 /* Lighter background for <pre> and <code> elements. */
-pre {
+/*pre {
   font-size: inherit;
   background-color: #fbfbfb;
 }
@@ -38,7 +38,7 @@ code {
   color: inherit;
   background-color: #fbfbfb;
   font-size: inherit;
-}
+}*/
 /* Prevent <code> elements from standing out from alerts. */
 .alert code {
   padding: 0;

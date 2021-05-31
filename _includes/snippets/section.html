@@ -2,9 +2,9 @@
 {% assign collapsible = true %}
 {% endif %}
 {% if collapsible %}
-<div class="panel-group" id="accordion_{{ include.section_id }}">
+<div id="accordion_{{ include.section_id }}">
 {% else %}
-<div class="panel-group">
+<div>
 {% endif %}
 
 {% for i in page.snippets[include.section_id] %}
