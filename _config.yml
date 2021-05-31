@@ -21,6 +21,7 @@ defaults:
       layout: post
 
 excerpt_separator: ''
+permalink: none
 
 highlighter: rouge
 markdown: kramdown
