@@ -8,9 +8,9 @@ My [Jekyll] theme.
 I use it for [egor-tensin.github.io], [blog], [sorting-algorithms].
 
 [Jekyll]: https://jekyllrb.com/
-[egor-tensin.github.io]: https://github.com/egor-tensin/egor-tensin.github.io
-[blog]: https://github.com/egor-tensin/blog/tree/gh-pages
-[sorting-algorithms]: https://github.com/egor-tensin/sorting-algorithms/tree/gh-pages
+[egor-tensin.github.io]: https://egor-tensin.github.io/
+[blog]: https://egor-tensin.github.io/blog/
+[sorting-algorithms]: https://egor-tensin.github.io/sorting-algorithms/
 
 Preview
 -------
@@ -93,9 +93,11 @@ Simply including categories/categories.html should do the job.
 
 ### Code snippets
 
-See [Test post 3] for an example of how to conveniently embed snippets in your
-pages.
+See [this post][snippets] for an example of how to conveniently embed code
+snippets in your pages.
 Basically, you need to put something like this in the front matter:
+
+[snippets]: _posts/2021-04-09-snippets.md
 
 ```
 snippets_root_directory: snippets
@@ -109,8 +111,6 @@ snippets:
     - world.cpp
 ```
 
-[Test post 3]: _posts/2021-04-09-test-post3.md
-
 And then you can just format an entire section of snippets using a single
 `include`:
 
@@ -119,6 +119,11 @@ And then you can just format an entire section of snippets using a single
 ```
 
 The line above would output both hello.hpp and hello.cpp to the page.
+
+Code snippets can be hidden in collapsible panels.
+See [this post][collapsible] for an example.
+
+[collapsible]: _posts/2021-04-10-collapsible.md
 
 ### Typesetting math
 
@@ -139,6 +144,10 @@ $$
 
 Behind the scenes, Kramdown transforms these to `\(...\)` and `\[...\]`
 sequences, to be processed by MathJax.
+
+See [this post][mathjax post] for a usage example.
+
+[mathjax post]: _posts/2021-04-08-mathjax.md
 
 History
 -------
