@@ -26,17 +26,15 @@ pre code {
   white-space: pre;
   word-wrap: normal;
 }
-/* Lighter background for <pre> and <code> elements. */
+/* Fixup syntax.css, which sets the code background to white. */
+.highlight {
+  background-color: #fafafa !important;
+}
+/* Use the default font size and color for <pre> and <code>. */
 pre {
   font-size: inherit;
-  background-color: #fbfbfb;
-}
-.highlight {
-  background-color: #fbfbfb !important;
 }
 code {
-  color: inherit;
-  background-color: #fbfbfb;
   font-size: inherit;
 }
 /* Prevent <code> elements from standing out from alerts. */
