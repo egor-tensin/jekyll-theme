@@ -147,7 +147,7 @@ History
 
 This theme wasn't built from the ground up, it's a product of concurrent
 evolution of my three Jekyll projects.
-At one moment I got sick of the code duplication, so I just cloned the most
+At one point I got sick of the code duplication, so I just cloned the most
 feature-reached project into this repository (tagged `from_jekyll_project`),
 and removed everything that wasn't theme-related.
 Then I made some minor tweaks to make it work with the other two projects, and
@@ -159,6 +159,21 @@ I thought about several alternatives to cloning the whole repository.
 history.
 2. Heavily rewriting repository history using `git filter-branch` or something
 like this is painfully hard to get right for me.
+
+Development
+-----------
+
+At one point I decided to bundle a modified version of Bootstrap 3.4 with the
+theme.
+One thing I found annoying about the unmodified Bootstrap is the small font
+size & the insanely large headers.
+I used the [customization tool] with a [custom config] to download a modified
+Boost version and included it in the assets/bootstrap directory.
+
+[customization tool]: https://getbootstrap.com/docs/3.4/customize/
+[custom config]: assets/bootstrap/config.json
+
+TODO: port the theme to Bootstrap 4/5/whatever?
 
 License
 -------
