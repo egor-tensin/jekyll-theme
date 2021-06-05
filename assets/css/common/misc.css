@@ -30,13 +30,6 @@ pre code {
 .highlight {
   background-color: #fafafa !important;
 }
-/* Use the default font size and color for <pre> and <code>. */
-pre {
-  font-size: inherit;
-}
-code {
-  font-size: inherit;
-}
 /* Prevent <code> elements from standing out from alerts. */
 .alert code {
   padding: 0;
