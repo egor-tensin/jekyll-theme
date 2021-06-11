@@ -28,7 +28,7 @@ jobs:
       - name: jekyll build
         run: bundle exec jekyll build --drafts
 
-  public:
+  publish:
     needs: [build]
     runs-on: ubuntu-18.04
     name: Publish
