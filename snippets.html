@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+      <title>Code snippets - jekyll-theme - John Doe</title>
+    
+
+    <link rel="stylesheet" href="/jekyll-theme/assets/bootstrap/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+
+
+    <link rel="stylesheet" href="/jekyll-theme/assets/css/main.css">
+
+    
+  </head>
+  <body>
+    <div class="top-level-footer-wrapper">
+      
+        <div class="footer-wrapper-collapse">
+          <nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">John Doe</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        
+          
+          
+          
+          
+          
+          
+          
+          
+            <li><a href="/jekyll-theme/"><span class="glyphicon glyphicon-home"></span>&nbsp;HOME</a></li>
+          
+        
+          
+          
+            
+            
+          
+          
+          
+          
+          
+          
+          
+            <li><a href="/jekyll-theme/feed/">FEED</a></li>
+          
+        
+          
+          
+          
+          
+          
+          
+          
+          
+            <li><a href="/jekyll-theme/archive/">ARCHIVE</a></li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+        </div>
+      
+      <div class="footer-wrapper-expand">
+        <div class="container">
+
+<div class="row">
+  <div class="col-md-8">
+    <h1>Code snippets</h1>
+<p class="text-muted">
+  <span class="glyphicon glyphicon-time"></span>&nbsp;Posted on 9 April 2021
+</p>
+<p>It’s pretty simple, just use the corresponding include:</p>
+
+<div class="panel-group">
+
+
+
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    
+    <div id="hello_hpp">hello.hpp</div>
+    
+  </div>
+  
+    <div class="panel-body">
+
+
+
+
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma once
+</span>
+<span class="kt">void</span> <span class="nf">hello_snippets</span><span class="p">();</span>
+</code></pre></div></div>
+
+
+      </div>
+  
+</div>
+
+
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    
+    <div id="hello_cpp">hello.cpp</div>
+    
+  </div>
+  
+    <div class="panel-body">
+
+
+
+
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "world.hpp"
+</span>
+<span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="kt">void</span> <span class="nf">hello_snippets</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello snippets!</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+      </div>
+  
+</div>
+
+
+
+</div>
+
+<p>This is another set of snippets:</p>
+
+<div class="panel-group">
+
+
+
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    
+    <div id="world_hpp">world.hpp</div>
+    
+  </div>
+  
+    <div class="panel-body">
+
+
+
+
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#pragma once
+</span>
+<span class="kt">void</span> <span class="nf">hello_world</span><span class="p">();</span>
+</code></pre></div></div>
+
+
+      </div>
+  
+</div>
+
+
+  
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    
+    <div id="world_cpp">world.cpp</div>
+    
+  </div>
+  
+    <div class="panel-body">
+
+
+
+
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "world.hpp"
+</span>
+<span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="kt">void</span> <span class="nf">hello_world</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello world!</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+      </div>
+  
+</div>
+
+
+
+</div>
+
+<p>You can insert a code snippet using the regular Markdown syntax without any
+highlighting:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env bash
+
+set -o errexit -o nounset -o pipefail
+
+main() {
+    echo "Hello, world!"
+}
+
+main
+</code></pre></div></div>
+
+<p>Also, some inline code: <code>./test.sh</code>!</p>
+
+<hr/>
+
+  </div>
+  <div class="col-md-4">
+    <div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-12">
+    <h4>About</h4>
+    <p>jekyll-theme preview. Feel free to contribute or contact me.</p>
+    <div class="list-group wide-enough">
+      <a class="list-group-item" href="https://github.com/egor-tensin/jekyll-theme"><span class="glyphicon glyphicon-home"></span>&nbsp;GitHub repository</a>
+      <a class="list-group-item" href="mailto:John.Doe@example.com"><span class="glyphicon glyphicon-envelope"></span>&nbsp;John.Doe@example.com</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-12">
+    <h4>Latest posts</h4>
+    
+    <div class="list-group wide-enough">
+      
+      <a class="list-group-item" href="/jekyll-theme/collapsible.html">
+        <span class="badge"><span class="glyphicon glyphicon-time"></span>&nbsp;10 Apr 2021</span>
+        <span class="glyphicon glyphicon-file"></span>&nbsp;Collapsible snippets
+      </a>
+      
+      <a class="list-group-item" href="/jekyll-theme/snippets.html">
+        <span class="badge"><span class="glyphicon glyphicon-time"></span>&nbsp;9 Apr 2021</span>
+        <span class="glyphicon glyphicon-file"></span>&nbsp;Code snippets
+      </a>
+      
+      <a class="list-group-item" href="/jekyll-theme/work/mathjax.html">
+        <span class="badge"><span class="glyphicon glyphicon-time"></span>&nbsp;8 Apr 2021</span>
+        <span class="glyphicon glyphicon-file"></span>&nbsp;MathJax
+      </a>
+      
+      <a class="list-group-item" href="/jekyll-theme/life/plain.html">
+        <span class="badge"><span class="glyphicon glyphicon-time"></span>&nbsp;7 Apr 2021</span>
+        <span class="glyphicon glyphicon-file"></span>&nbsp;Plain text
+      </a>
+      
+    </div>
+    
+  </div>
+</div>
+
+  </div>
+</div>
+        </div>
+      </div>
+      <div class="footer-wrapper-collapse">
+        <footer class="navbar-default">
+          <div class="container">
+            <div style="display: table; width: 100%;">
+              <div style="display: table-row;">
+                <div style="display: table-cell;">
+                  <div class="text-center text-muted"><small>This project is licensed under the terms of the MIT License. See <a href="/jekyll-theme/LICENSE.txt">License</a> for details.</small></div>
+                </div>
+              </div>
+              <div style="display: table-row;">
+                <div style="display: table-cell;">
+                  <div class="text-center text-muted"><small>This version of the page was generated on 15 June 2021.</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="/jekyll-theme/assets/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
