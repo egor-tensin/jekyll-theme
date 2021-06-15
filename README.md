@@ -1,7 +1,7 @@
 jekyll-theme
 ============
 
-[![Publish](https://github.com/egor-tensin/jekyll-theme/actions/workflows/jekyll.yml/badge.svg)](https://github.com/egor-tensin/jekyll-theme/actions/workflows/jekyll.yml)
+[![CI](https://github.com/egor-tensin/jekyll-theme/actions/workflows/ci.yml/badge.svg)](https://github.com/egor-tensin/jekyll-theme/actions/workflows/ci.yml)
 
 My [Jekyll] theme.
 
