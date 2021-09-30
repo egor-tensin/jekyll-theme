@@ -163,6 +163,8 @@ like this is painfully hard to get right for me.
 Development
 -----------
 
+### Bootstrap theme
+
 At one point I decided to bundle a modified version of Bootstrap 3.4 with the
 theme.
 One thing I found annoying about the unmodified Bootstrap is the small font
