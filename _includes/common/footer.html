@@ -21,5 +21,10 @@
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="{{ '/assets/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>
+    {% if page.custom_js %}
+      {% for js in page.custom_js %}
+        <script src="{{ '/assets/js/' | relative_url }}{{ js }}"></script>
+      {% endfor %}
+    {% endif %}
   </body>
 </html>
