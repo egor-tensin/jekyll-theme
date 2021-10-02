@@ -23,7 +23,13 @@
     <script src="{{ '/assets/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>
     {% if page.custom_js %}
       {% for js in page.custom_js %}
-        <script src="{{ '/assets/js/' | relative_url }}{{ js }}"></script>
+        {% assign abs_check = js | downcase | split: '//' %}
+        {% if abs_check[0] == 'http:' or abs_check[0] == 'https:' or abs_check[0] == blank %}
+          {% assign url = js %}
+        {% else %}
+          {% assign url = '/assets/js/' | relative_url | append: js %}
+        {% endif %}
+        <script src="{{ url }}"></script>
       {% endfor %}
     {% endif %}
   </body>

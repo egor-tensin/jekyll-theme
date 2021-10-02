@@ -23,7 +23,13 @@
 
     {% if page.custom_css %}
       {% for css in page.custom_css %}
-        <link rel="stylesheet" href="{{ '/assets/css/' | relative_url }}{{ css }}">
+        {% assign abs_check = css | downcase | split: '//' %}
+        {% if abs_check[0] == 'http:' or abs_check[0] == 'https:' or abs_check[0] == blank %}
+          {% assign url = css %}
+        {% else %}
+          {% assign url = '/assets/css/' | relative_url | append: css %}
+        {% endif %}
+        <link rel="stylesheet" href="{{ url }}">
       {% endfor %}
     {% endif %}
   </head>

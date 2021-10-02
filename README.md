@@ -149,7 +149,7 @@ See [this post][mathjax post] for a usage example.
 Include custom CSS stylesheets in the header & custom JavaScript files in the
 footer by specifying the `page.custom_css` and `page.custom_js` arrays.
 They will be picked up from the root "assets/css" and "assets/js" directories
-respectively.
+respectively (unless the URL is absolute).
 
 History
 -------
