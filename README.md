@@ -144,6 +144,13 @@ See [this post][mathjax post] for a usage example.
 
 [mathjax post]: _posts/2021-04-08-mathjax.md
 
+### Custom CSS & JavaScript
+
+Include custom CSS stylesheets in the header & custom JavaScript files in the
+footer by specifying the `page.custom_css` and `page.custom_js` arrays.
+They will be picked up from the root "assets/css" and "assets/js" directories
+respectively.
+
 History
 -------
 
