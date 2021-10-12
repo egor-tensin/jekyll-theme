@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {% if site.settings.project.name %}
-      <title>{{ page.title }} - {{ site.settings.project.name }} - {{ site.settings.author.name }}</title>
+      {% capture title %}{{ site.settings.project.name }} - {{ site.settings.author.name }}{% endcapture %}
     {% else %}
-      <title>{{ page.title }} - {{ site.settings.author.name }}</title>
+      {% capture title %}{{ site.settings.author.name }}{% endcapture %}
     {% endif %}
+    {% if page.url != '/' %}
+      {% capture title %}{{ page.title }} - {{ title }}{% endcapture %}
+    {% endif %}
+    <title>{{ title }}</title>
 
     <link rel="stylesheet" href="{{ '/assets/bootstrap/css/bootstrap.min.css' | relative_url }}">
     <!--[if lt IE 9]>
