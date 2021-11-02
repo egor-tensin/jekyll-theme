@@ -72,7 +72,7 @@ Customize the link text and the icon by setting
 `site.settings.navbar.github.link` and `site.settings.navbar.github.icon`
 accordingly.
 
-Hide the link by settings `site.settings.navbar.github` to `false`.
+Hide the link by setting `site.settings.navbar.github` to `false`.
 
 ### Posts feed
 
