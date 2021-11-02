@@ -62,14 +62,17 @@ something like `home` or `envelope` (or [any other glyphicon]).
 
 [any other glyphicon]: https://getbootstrap.com/docs/3.4/components/#glyphicons
 
+#### GitHub link
+
 If you use `jekyll-github-metadata` (you do if you use the `github-pages` gem),
 a link to the GitHub repository is added at the end of the navbar.
 Customize the link text and the icon by setting
 `site.settings.navbar.github.link` and `site.settings.navbar.github.icon`
 accordingly.
+
 Hide the link by settings `site.settings.navbar.github` to `false`.
 
-### Post feed
+### Posts feed
 
 See [feed/index.html] for an example of how to easily create a paginated post
 feed.
