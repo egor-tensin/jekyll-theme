@@ -60,7 +60,7 @@ Pages are sorted in the ascending order of `page.navbar.priority`.
 If a page on the navbar is paginated, set `page.navbar.paginated` to `true` so
 that it doesn't appear more than once.
 You can add a glyphicon to the navbar link by settings `page.navbar.icon` to
-something like `home` or `envelope` (or [any other glyphicon]).
+something like "home" or "envelope" (or [any other glyphicon]).
 
 [any other glyphicon]: https://getbootstrap.com/docs/3.4/components/#glyphicons
 
