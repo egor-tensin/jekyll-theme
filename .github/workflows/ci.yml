@@ -28,24 +28,3 @@ jobs:
           bundler-cache: true
       - name: jekyll build
         run: bundle exec jekyll build --drafts
-
-  publish:
-    needs: [build]
-    runs-on: ubuntu-latest
-    name: Publish
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.7'
-          bundler-cache: true
-      - name: Build
-        run: bundle exec jekyll build --baseurl /jekyll-theme
-      - name: Publish
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: gh-pages
-          folder: _site
-          single-commit: true
