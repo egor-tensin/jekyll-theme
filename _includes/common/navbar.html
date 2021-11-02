@@ -59,7 +59,7 @@
           {% capture github_icon %}<span class="glyphicon glyphicon-{{ github_icon }}"></span>&nbsp;{% endcapture %}
           {% if site.settings.navbar.github == false %}
           {% else %}
-            <li><a href="{{ site.github.repository_url }}">{{ github_icon }}{{ github_link | upcase }}</a></li>
+            <li><a href="{{ site.github.repository_url }}" target="_blank">{{ github_icon }}{{ github_link | upcase }}</a></li>
           {% endif %}
         {% endif %}
       </ul>
