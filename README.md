@@ -56,7 +56,7 @@ Put a page on the navbar by setting `page.navbar.link` to `true` or a custom
 HTML string.
 Pages are sorted in the ascending order of `page.navbar.priority`.
 If a page on the navbar is paginated, set `page.navbar.paginated` to `true` so
-that it doesn't appear two or more times.
+that it doesn't appear more than once.
 You can add a glyphicon to the navbar link by settings `page.navbar.icon` to
 something like `home` or `envelope` (or [any other glyphicon]).
 
