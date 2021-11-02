@@ -44,6 +44,24 @@
             <li><a href="{{ node.url | relative_url }}">{{ icon }}{{ link }}</a></li>
           {% endif %}
         {% endfor %}
+
+        {% if site.github %}
+          {% assign github_link = 'GitHub' %}
+          {% assign github_icon = 'globe' %}
+          {% if site.settings.navbar.github %}
+            {% if site.settings.navbar.github.link %}
+              {% assign github_link = site.settings.navbar.github.link %}
+            {% endif %}
+            {% if site.settings.navbar.github.icon %}
+              {% assign github_icon = site.settings.navbar.github.icon %}
+            {% endif %}
+          {% endif %}
+          {% capture github_icon %}<span class="glyphicon glyphicon-{{ github_icon }}"></span>&nbsp;{% endcapture %}
+          {% if site.settings.navbar.github == false %}
+          {% else %}
+            <li><a href="{{ site.github.repository_url }}">{{ github_icon }}{{ github_link | upcase }}</a></li>
+          {% endif %}
+        {% endif %}
       </ul>
     </div>
   </div>
