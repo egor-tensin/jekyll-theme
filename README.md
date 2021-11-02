@@ -5,12 +5,14 @@ jekyll-theme
 
 My [Jekyll] theme.
 
-I use it for [egor-tensin.github.io], [blog], [sorting-algorithms].
+I use it for [egor-tensin.github.io], [blog], [sorting-algorithms],
+[wireguard-config].
 
 [Jekyll]: https://jekyllrb.com/
 [egor-tensin.github.io]: https://egor-tensin.github.io/
 [blog]: https://egor-tensin.github.io/blog/
 [sorting-algorithms]: https://egor-tensin.github.io/sorting-algorithms/
+[wireguard-config]: https://egor-tensin.github.io/wireguard-config/
 
 Preview
 -------
