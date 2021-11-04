@@ -37,7 +37,8 @@ settings:
     email: John.Doe@example.com
   navbar:
     hide: false
-    github: # Only relevant if you use jekyll-github-metadata/github-pages
+    github:
+      # Only relevant if you use jekyll-github-metadata or github-pages
       link: GitHub
       icon: globe
 ```
