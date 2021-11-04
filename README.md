@@ -1,4 +1,4 @@
-jekyll-theme
+Jekyll theme
 ============
 
 [![CI](https://github.com/egor-tensin/jekyll-theme/actions/workflows/ci.yml/badge.svg)](https://github.com/egor-tensin/jekyll-theme/actions/workflows/ci.yml)
