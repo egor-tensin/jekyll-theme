@@ -5,10 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% if site.settings.project.name %}
-      {% capture title %}{{ site.settings.project.name }} - {{ site.settings.author.name }}{% endcapture %}
+    {% assign project_name = site.settings.project.name %}
+    {% unless project_name %}
+      {% if site.github && site.github.is_project_page %}
+        {% assign project_name = site.github.repository_name %}
+      {% endif %}
+    {% endunless %}
+    {% assign author_name = site.settings.author.name %}
+    {% unless author_name %}
+      {% if site.github %}
+        {% assign author_name = site.github.owner_name %}
+      {% endif %}
+    {% endunless %}
+    {% assign author_name = author_name | default: 'John Doe' %}
+    {% if project_name %}
+      {% capture title %}{{ project_name }} - {{ author_name }}{% endcapture %}
     {% else %}
-      {% capture title %}{{ site.settings.author.name }}{% endcapture %}
+      {% capture title %}{{ author_name }}{% endcapture %}
     {% endif %}
     {% if page.url != '/' %}
       {% capture title %}{{ page.title }} - {{ title }}{% endcapture %}
@@ -39,11 +52,10 @@
   </head>
   <body>
     <div class="top-level-footer-wrapper">
-      {% if site.settings.navbar.hide or page.navbar.hide %}
-      {% else %}
+      {% unless site.settings.navbar.hide or page.navbar.hide %}
         <div class="footer-wrapper-collapse">
           {% include common/navbar.html %}
         </div>
-      {% endif %}
+      {% endunless %}
       <div class="footer-wrapper-expand">
         <div class="container">

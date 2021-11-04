@@ -43,13 +43,8 @@ paginate_path: '/feed/page:num/'
 
 # Theme settings
 settings:
-  project:
-    name: jekyll-theme
-    description: jekyll-theme preview
-    license: MIT License
-    license_file: LICENSE.txt
   author:
-    name: John Doe
-    email: John.Doe@example.com
-  navbar:
-    hide: false
+    # jekyll-github-metadata doesn't include the display name or the email
+    # address of the owner.
+    name: Egor Tensin
+    email: Egor.Tensin@gmail.com

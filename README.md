@@ -28,7 +28,7 @@ Put it in \_config.yml and adjust how you see fit.
 ```
 settings:
   project:
-    name: Test
+    name: Test project
     description: This is a test project
     license: MIT License
     license_file: LICENSE.txt
@@ -37,6 +37,9 @@ settings:
     email: John.Doe@example.com
   navbar:
     hide: false
+    github: # Only relevant if you use jekyll-github-metadata/github-pages
+      link: GitHub
+      icon: globe
 ```
 
 Features

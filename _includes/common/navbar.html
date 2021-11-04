@@ -7,7 +7,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">{{ site.settings.author.name }}</a>
+      {% assign author_name = site.settings.author.name %}
+      {% unless author_name %}
+        {% if site.github %}
+          {% assign author_name = site.github.owner_name %}
+        {% endif %}
+      {% endunless %}
+      {% assign author_name = author_name | default: 'John Doe' %}
+      <a class="navbar-brand" href="/">{{ author_name }}</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -45,22 +52,11 @@
           {% endif %}
         {% endfor %}
 
-        {% if site.github %}
-          {% assign github_link = 'GitHub' %}
-          {% assign github_icon = 'globe' %}
-          {% if site.settings.navbar.github %}
-            {% if site.settings.navbar.github.link %}
-              {% assign github_link = site.settings.navbar.github.link %}
-            {% endif %}
-            {% if site.settings.navbar.github.icon %}
-              {% assign github_icon = site.settings.navbar.github.icon %}
-            {% endif %}
-          {% endif %}
+        {% if site.github and site.settings.navbar.github != false %}
+          {% assign github_link = site.settings.navbar.github.link | default: 'GitHub' %}
+          {% assign github_icon = site.settings.navbar.github.icon | default: 'globe' %}
           {% capture github_icon %}<span class="glyphicon glyphicon-{{ github_icon }}"></span>&nbsp;{% endcapture %}
-          {% if site.settings.navbar.github == false %}
-          {% else %}
-            <li><a href="{{ site.github.repository_url }}" target="_blank">{{ github_icon }}{{ github_link | upcase }}</a></li>
-          {% endif %}
+          <li><a href="{{ site.github.repository_url }}" target="_blank">{{ github_icon }}{{ github_link | upcase }}</a></li>
         {% endif %}
       </ul>
     </div>

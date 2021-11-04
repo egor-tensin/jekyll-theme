@@ -6,7 +6,7 @@
             <div style="display: table; width: 100%;">
               <div style="display: table-row;">
                 <div style="display: table-cell;">
-                  <div class="text-center text-muted"><small>This project is licensed under the terms of the {{ site.settings.project.license }}. See <a href="{{ '/' | relative_url }}{{ site.settings.project.license_file }}">License</a> for details.</small></div>
+                  <div class="text-center text-muted"><small>This project is licensed under the terms of the {{ site.settings.project.license | default: 'MIT License' }}. See <a href="{{ '/' | relative_url }}{{ site.settings.project.license_file | default: 'LICENSE.txt' }}">License</a> for details.</small></div>
                 </div>
               </div>
               <div style="display: table-row;">
