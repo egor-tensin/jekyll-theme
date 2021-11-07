@@ -1,5 +1,5 @@
 ---
-base: https://egor-tensin.github.io/
+base: https://egor-tensin.github.io
 title: Home page
 navbar:
   link: Home
