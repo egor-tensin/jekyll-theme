@@ -1,0 +1,12 @@
+/* This is a relatively popular workaround to align side-by-side columns.
+ * I use it for post headers. */
+.post-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: 1em;
+}
+.post-date {
+  text-align: right;
+}

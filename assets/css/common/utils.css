@@ -1,0 +1,7 @@
+/* Utility classes to prevent blocks from expanding unreasonably. */
+.wide-enough {
+  max-width: 400px;
+}
+.wider {
+  max-width: 600px;
+}
