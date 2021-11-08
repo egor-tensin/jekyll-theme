@@ -10,3 +10,6 @@
 .post-date {
   text-align: right;
 }
+.post-date a.category {
+  margin-right: .5em;
+}
