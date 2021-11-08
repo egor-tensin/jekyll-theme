@@ -10,7 +10,7 @@ layout: default
       {% if page.category %}
         <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ '/' | relative_url }}{{ page.category | slugify: 'pretty' }}/">{{ page.category }}</a>
       {% endif %}
-      <span class="glyphicon glyphicon-time"></span>&nbsp;{{ page.date | date: '%-d&nbsp;%B&nbsp;%Y' }}
+      <span class="glyphicon glyphicon-time"></span>&nbsp;{{ page.date | date: '%-d&nbsp;%b&nbsp;%Y' }}
     </p>
   </div>
 </div>
