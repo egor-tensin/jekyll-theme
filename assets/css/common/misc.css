@@ -39,3 +39,16 @@ pre code {
 .text-muted a.category {
   color: inherit;
 }
+
+/* This is a relatively popular workaround to align side-by-side columns.
+ * I use it for post headers. */
+.post-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+@media (min-width: 768px) {
+  .post-date {
+    text-align: right;
+  }
+}
