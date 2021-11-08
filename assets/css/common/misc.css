@@ -47,6 +47,7 @@ pre code {
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
+  column-gap: 1em;
 }
 .post-date {
   text-align: right;
