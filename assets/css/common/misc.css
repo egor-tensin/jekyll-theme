@@ -46,9 +46,8 @@ pre code {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
+  justify-content: space-between;
 }
-@media (min-width: 768px) {
-  .post-date {
-    text-align: right;
-  }
+.post-date {
+  text-align: right;
 }

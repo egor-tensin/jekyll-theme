@@ -3,11 +3,9 @@
   <hr/>
 {% else %}
   {% for post in paginator.posts %}
-    <div class="row post-header">
-      <div class="col-xs-12 col-sm-8">
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      </div>
-      <div class="col-xs-12 col-sm-4 post-date">
+    <div class="post-header">
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <div class="post-date">
         <p class="text-muted">
           {% if post.category %}
             <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ '/' | relative_url }}{{ post.category | slugify: 'pretty' }}/">{{ post.category }}</a>
