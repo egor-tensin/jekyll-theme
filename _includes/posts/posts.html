@@ -12,7 +12,7 @@
           {% if post.category %}
             <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ '/' | relative_url }}{{ post.category | slugify: 'pretty' }}/">{{ post.category }}</a>
           {% endif %}
-          <span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d&nbsp;%b&nbsp;%Y' }}
+          &nbsp;<span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d&nbsp;%b&nbsp;%Y' }}
         </p>
       </div>
     </div>
