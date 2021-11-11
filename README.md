@@ -19,6 +19,22 @@ Preview
 
 An example website can be viewed at https://egor-tensin.github.io/jekyll-theme/.
 
+Usage
+-----
+
+Use the `jekyll-remote-theme` plugin.
+Put this in your \_config.yml:
+
+```
+plugins:
+  - jekyll-remote-theme
+  # Other plugins...
+
+remote_theme: egor-tensin/jekyll-theme
+# Preferably, pin the exact commit:
+#remote_theme: egor-tensin/jekyll-theme@COMMIT_HASH
+```
+
 Configuration
 -------------
 
