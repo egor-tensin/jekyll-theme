@@ -58,6 +58,10 @@
         <link rel="stylesheet" href="{{ url }}">
       {% endfor %}
     {% endif %}
+
+    {% if site.settings.ga_tag %}
+      {% include common/ga.html ga_tag=site.settings.ga_tag %}
+    {% endif %}
   </head>
   <body>
     <div class="top-level-footer-wrapper">

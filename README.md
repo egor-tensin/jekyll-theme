@@ -58,6 +58,8 @@ settings:
     github:
       link: GitHub
       icon: globe
+  # If you want to enable Google Analytics, optional:
+  ga_tag: X-XXXXXXXXXX
 ```
 
 Features
