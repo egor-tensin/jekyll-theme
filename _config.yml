@@ -4,6 +4,7 @@ baseurl: /jekyll-theme
 exclude:
   - Gemfile
   - Gemfile.lock
+  - Makefile
   - README.md
   - vendor/
 
