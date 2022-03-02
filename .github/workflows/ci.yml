@@ -28,3 +28,7 @@ jobs:
           bundler-cache: true
       - name: Build
         run: make build
+      - name: Check integrity
+        run: |
+          nohup make serve &
+          sleep 3 && make wget
