@@ -59,6 +59,10 @@
       {% endfor %}
     {% endif %}
 
+    {% for link in site.settings.links %}
+      <link{% for attr in link %} {{ attr[0] }}="{{ attr[1] }}"{% endfor %}>
+    {% endfor %}
+
     {% if site.settings.ga_tag %}
       {% include common/ga.html ga_tag=site.settings.ga_tag %}
     {% endif %}
