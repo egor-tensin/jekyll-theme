@@ -18,5 +18,7 @@
 <div>
   <pre class="shell-mark">$</pre><pre class="shell-cmd">{{ cmd }}</pre>
 </div>
-<pre class="shell-out">{{ include.out }}</pre>
+{% if include.out %}
+  <pre class="shell-out">{{ include.out }}</pre>
+{% endif %}
 </div>
