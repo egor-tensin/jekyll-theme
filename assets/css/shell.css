@@ -29,21 +29,22 @@
 }
 
 /* Styling, yo. */
-.shell-cmd, .shell-mark {
+.shell-mark, .shell-cmd {
   border-width: 0 0 medium 0;
   background-color: #f0f0f0;
   /* Color the border in the color of grass. */
   border-color: #008567;
-}
-.shell-out {
-  border-width: 0 0 thin 0;
-}
-.shell-cmd {
-  padding-left: 0;
 }
 .shell-mark {
   font-weight: bold;
   /* I like colors. */
   color: #20004b;
   user-select: none;
+}
+.shell-cmd {
+  /* No double-padding between .shell-mark and .shell-cmd. */
+  padding-left: 0;
+}
+.shell-out {
+  border-width: 0 0 thin 0;
 }
