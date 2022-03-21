@@ -29,11 +29,14 @@
 }
 
 /* Styling, yo. */
-.shell-mark, .shell-cmd {
-  border-width: 0 0 medium 0;
-  background-color: #f0f0f0;
+.shell > div {
   /* Color the border in the color of grass. */
-  border-color: #008567;
+  border: medium solid #008567;
+  border-width: 0 0 medium 0;
+}
+.shell-mark, .shell-cmd {
+  border: none;
+  background-color: #f0f0f0;
 }
 .shell-mark {
   font-weight: bold;
