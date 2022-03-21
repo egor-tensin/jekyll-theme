@@ -13,7 +13,10 @@ snippets:
     - world.hpp
     - world.cpp
 ---
-Just set a front matter value, and voilà!
+Snippets are defined in exactly the same way as in the [other post].
+Just set a front matter value to make them collapsible, and voilà!
+
+[other post]: {{ site.baseurl }}{% post_url 2021-04-09-snippets %}
 
 {% include snippets/section.html section_id='hello' %}
 
