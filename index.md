@@ -20,6 +20,7 @@ I use it for
 * [Post w/ MathJax formulas]({{ site.baseurl }}{% post_url 2021-04-08-mathjax %})
 * [Post w/ code snippets]({{ site.baseurl }}{% post_url 2021-04-09-snippets %})
 * [Post w/ _collapsible_ code snippets]({{ site.baseurl }}{% post_url 2021-04-10-collapsible %})
+* [Post w/ shell commands]({{ site.baseurl }}{% post_url 2022-03-21-shell %})
 
 [Jekyll]: https://jekyllrb.com/
 [egor-tensin.github.io]: {{ page.base }}

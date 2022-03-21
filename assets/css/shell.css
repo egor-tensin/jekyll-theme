@@ -1,0 +1,41 @@
+.shell pre {
+  /* Reset Bootstrap's settings for <pre>. */
+  margin: 0;
+  border-radius: 0;
+}
+
+/* WTF is this? I somehow came up with it, but I hope there's a better way.
+ * 10.5px is the standard bottom margin for <pre>s. */
+.shell {
+  margin-bottom: 10.5px;
+}
+.shell + .shell {
+  margin-top: -10.5px;
+}
+
+.shell > div {
+  display: flex;
+}
+.shell-cmd {
+  flex: 2;
+}
+
+/* Styling, yo. */
+.shell-cmd, .shell-mark {
+  border-width: 0 0 medium 0;
+  background-color: #ececec;
+  /* Color the border in the color of grass. */
+  border-color: #008567;
+}
+.shell-out {
+  border-width: 0 0 thin 0;
+}
+.shell-cmd {
+  padding-left: 0;
+}
+.shell-mark {
+  font-weight: bold;
+  /* I like colors. */
+  color: #20004b;
+  user-select: none;
+}

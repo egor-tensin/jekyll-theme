@@ -1,0 +1,22 @@
+<div class="shell">
+{% assign cmd = include.cmd | newline_to_br | strip_newlines %}
+{% assign br = '<br />' %}
+{% assign br_len = br | size %}
+{% assign prefix = cmd | slice: 0,br_len %}
+{% if prefix == br %}
+  {% assign cmd = cmd | remove_first: br %}
+{% endif %}
+{% assign cmd = cmd | split: br %}
+{% assign new_cmd = '' | split: '' %}
+{% for line in cmd %}
+  {% capture new_line %}{{ line }}
+{% endcapture %}
+  {% assign new_cmd = new_cmd | push: new_line %}
+{% endfor %}
+{% assign cmd = new_cmd %}
+{% assign cmd = cmd | join: '' %}
+<div>
+  <pre class="shell-mark">$</pre><pre class="shell-cmd">{{ cmd }}</pre>
+</div>
+<pre class="shell-out">{{ include.out }}</pre>
+</div>
