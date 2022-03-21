@@ -14,12 +14,12 @@ I use it for
 * [sorting-algorithms],
 * [wireguard-config].
 
-**Check these out**:
+**Check out the pages below.**
 
-* [posts feed]({{ '/feed/' | relative_url }}),
-* [post with MathJax formulas]({{ site.baseurl }}{% post_url 2021-04-08-mathjax %}),
-* [post with code snippets]({{ site.baseurl }}{% post_url 2021-04-09-snippets %}),
-* [post with collapsible code snippets]({{ site.baseurl }}{% post_url 2021-04-10-collapsible %}).
+* [Post feed]({{ '/feed/' | relative_url }})
+* [Post w/ MathJax formulas]({{ site.baseurl }}{% post_url 2021-04-08-mathjax %})
+* [Post w/ code snippets]({{ site.baseurl }}{% post_url 2021-04-09-snippets %})
+* [Post w/ _collapsible_ code snippets]({{ site.baseurl }}{% post_url 2021-04-10-collapsible %})
 
 [Jekyll]: https://jekyllrb.com/
 [egor-tensin.github.io]: {{ page.base }}
