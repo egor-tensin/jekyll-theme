@@ -23,7 +23,7 @@
 /* Styling, yo. */
 .shell-cmd, .shell-mark {
   border-width: 0 0 medium 0;
-  background-color: #ececec;
+  background-color: #f0f0f0;
   /* Color the border in the color of grass. */
   border-color: #008567;
 }
