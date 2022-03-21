@@ -7,9 +7,13 @@ h5 a,
 h6 a {
   color: inherit;
 }
-/* Link captions might become too close to badges on the sidebar. */
 span.badge {
+  /* Link captions might become too close to badges on the sidebar. */
   margin-left: .5em;
+  /* Color badges in the color of grass.
+   * TODO: research if this can be set in the config or factor it out into a
+   * variable. */
+  background-color: #008567;
 }
 /* Add horizontal scrollbars to <pre>s and don't wrap the code inside. */
 pre {
