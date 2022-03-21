@@ -15,9 +15,17 @@
 
 .shell > div {
   display: flex;
+  overflow: auto;
+}
+.shell-mark {
+  /* Don't shrink it. */
+  flex: none;
 }
 .shell-cmd {
-  flex: 2;
+  flex: 1;
+  /* The combination of overflow values disables the scrollbar for .shell-cmd
+   * and assigns it to the outer div instead, which looks nicer. */
+  overflow: visible;
 }
 
 /* Styling, yo. */
