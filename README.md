@@ -201,10 +201,40 @@ See [this post][mathjax post] for a usage example.
 
 ### Custom CSS & JavaScript
 
-Include custom CSS stylesheets in the header & custom JavaScript files in the
-footer by specifying the `page.custom_css` and `page.custom_js` arrays.
-They will be picked up from the root "assets/css" and "assets/js" directories
-respectively (unless the URL is absolute).
+Add custom `<link>` tags to the header by adding them either to:
+
+* `site.settings.links` in _config.yml (the new links will be added to all
+pages),
+
+      settings:
+        links:
+          - {rel: stylesheet, href: 'https://example.com/global-link.css'}
+          - {rel: stylesheet, href: 'assets/css/local-link.css'}
+
+* `page.links` in a page's front matter (will be added to this page only).
+
+      ---
+      links:
+        - {rel: stylesheet, href: 'https://example.com/global-link.css'}
+        - {rel: stylesheet, href: 'assets/css/local-link.css'}
+      ---
+
+You can also add custom `<script>` tags in a similar way.
+
+* In _config.yml:
+
+      settings:
+        scripts:
+          - {src: 'https://example.com/global-script.js'}
+          - {src: 'assets/js/local-script.js'}
+
+* In page's front matter:
+
+      ---
+      scripts:
+        - {src: 'https://example.com/global-script.js'}
+        - {src: 'assets/js/local-script.js'}
+      ---
 
 History
 -------
