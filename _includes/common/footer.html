@@ -3,10 +3,9 @@
       <div class="footer-wrapper-collapse">
         <footer class="navbar-default">
           <div class="container">
-            <div style="display: table; width: 100%;" class="small">
-              <div style="display: table-row;">
-                <div style="display: table-cell;">
-                  <div class="text-center text-muted">
+            <div class="row">
+              <div class="col-xs-12 text-center">
+
                     {% if site.settings.project.license_file %}
                       {% capture license_file %}{{ '/' | relative_url }}{{ site.settings.project.license_file }}{% endcapture %}
                     {% else %}
@@ -30,17 +29,17 @@
                       {% endunless %}
                     {% endif %}
                     {% if license %}
-                      This project is licensed under the <a href="{{ license_file }}">{{ license }}</a>.
+                      {% capture license_text %}License: <a href="{{ license_file }}">{{ license }}</a>{% endcapture %}
                     {% elsif license_file %}
-                      This project is licensed under <a href="{{ license_file }}">this license</a>.
+                      {% capture license_text %}License: <a href="{{ license_file }}">click here</a>{% endcapture %}
                     {% endif %}
-                  </div>
-                </div>
-              </div>
-              <div style="display: table-row;">
-                <div style="display: table-cell;">
-                  <div class="text-center text-muted">This page was generated on {{ site.time | date: '%-d %B %Y' }}.</div>
-                </div>
+
+{% capture sep %}<span style="padding: 0 1em;">|</span>{% endcapture %}
+{% capture timestamp_text %}Last update: {{ site.time | date: '%-d %B %Y' }}{% endcapture %}
+<div class="small text-muted">
+  {% if license_text %}{{ license_text }}{{ sep }}{% endif %}{{ timestamp_text }}
+</div>
+
               </div>
             </div>
           </div>
