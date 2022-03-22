@@ -15,9 +15,9 @@ jekyll-theme
 <div style="display: flex; flex-wrap: wrap; column-gap: 1em;">
 
 <div class="list-group wide-enough">
-  <a href="#" class="list-group-item disabled">
+  <div class="list-group-item disabled">
     <h4 class="list-group-item-heading">features</h4>
-  </a>
+  </div>
   <a href="{{ '/feed/' | relative_url }}" class="list-group-item">
     <h4 class="list-group-item-heading">feed</h4>
     <p class="list-group-item-text">A paginated post feed</p>

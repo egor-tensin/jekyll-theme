@@ -47,3 +47,9 @@ pre code {
 pre {
   position: relative;
 }
+/* Don't change the cursor, why? Also, use simple <div>s as
+ * .list-group-item.disabled elements instead of <a>s. */
+.list-group-item.disabled {
+  cursor: auto !important;
+  user-select: none;
+}
