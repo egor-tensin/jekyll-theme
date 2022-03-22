@@ -36,3 +36,8 @@ pre code {
 .text-muted a.category {
   color: inherit;
 }
+/* WTF? Sometimes I want to skip .list-group-item-text, and I don't want the
+ * margin for the heading. */
+.list-group-item-heading:last-child {
+  margin-bottom: 0;
+}
