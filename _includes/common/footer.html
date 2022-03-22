@@ -11,7 +11,8 @@
                       {% capture license_file %}{{ '/' | relative_url }}{{ site.settings.project.license_file }}{% endcapture %}
                     {% else %}
                       {% for file in site.static_files %}
-                        {% if file.path == '/LICENSE.txt' %}
+                        {% assign path = file.path | downcase %}
+                        {% if path == 'license' or path == 'license.txt' %}
                           {% assign license_file = file.path | relative_url %}
                         {% endif %}
                       {% endfor %}
