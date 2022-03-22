@@ -4,7 +4,6 @@
 {% else %}
   {% for category in site.categories %}
     <h1><a class="category" href="{{ '/' | relative_url }}{{ category[0] | slugify: 'pretty' }}/">{{ category[0] }}</a></h1>
-    <hr/>
     <ul>
       {% for post in category[1] %}
         <li><a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }} &mdash; {{ post.title }}</a></li>
@@ -14,7 +13,6 @@
   {% assign uncategorized = site.posts | where_exp: "post","post.categories.size == 0" %}
   {% if uncategorized.size != 0 %}
     <h1>Other</h1>
-    <hr/>
     <ul>
       {% for post in uncategorized %}
       <li><a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }} &mdash; {{ post.title }}</a></li>
