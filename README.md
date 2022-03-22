@@ -65,6 +65,14 @@ settings:
 Features
 --------
 
+* [Layouts](#layouts)
+* [Navbar](#navbar)
+* [Feed](#feed)
+* [Categories](#categories)
+* [Code snippets](#code-snippets)
+* [Shell commands](#shell-commands)
+* [Typesetting math](#typesetting-math)
+
 ### Layouts
 
 * `plain`: navbar at the top + footer at the bottom
@@ -97,7 +105,7 @@ accordingly.
 
 Hide the link by setting `site.settings.navbar.github` to `false`.
 
-### Posts feed
+### Feed
 
 See [feed/index.html] for an example of how to easily create a paginated post
 feed.
@@ -105,7 +113,7 @@ Basically, just include posts/posts.html.
 
 [feed/index.html]: feed/index.html
 
-### Category pages
+### Categories
 
 See [life/index.html] or [work/index.html] for examples of how to create
 category pages, with a list of posts belonging to the category.
