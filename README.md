@@ -110,7 +110,7 @@ Hide the link by setting `site.settings.navbar.github` to `false`.
 
 See [feed/index.html] for an example of how to easily create a paginated post
 feed.
-Basically, just include posts/posts.html.
+Basically, just include posts/feed.html.
 
 [feed/index.html]: feed/index.html
 
@@ -126,7 +126,7 @@ parameter to the category's name.
 
 If you want to create a page with a list of all categories and the posts
 belonging to them, see [archive/index.html] for an example.
-Simply including categories/categories.html should do the job.
+Simply including categories/all.html should do the job.
 
 [archive/index.html]: archive/index.html
 
