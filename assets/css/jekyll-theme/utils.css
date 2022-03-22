@@ -5,3 +5,11 @@
 .wider {
   max-width: 600px;
 }
+/*
+ * The fucking font boosting on Android's Chrome.
+ * This does seem to disable it, for God knows what reason:
+ * https://stackoverflow.com/a/16432702/514684
+ */
+html * {
+  max-height: 1000000px;
+}
