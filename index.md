@@ -17,7 +17,7 @@ jekyll-theme
 
 <div class="list-group">
   <a href="#" class="list-group-item disabled">
-    <h3 class="list-group-item-heading">Features</h3>
+    <h4 class="list-group-item-heading">Features</h4>
   </a>
   <a href="{{ '/feed/' | relative_url }}" class="list-group-item">
     <h4 class="list-group-item-heading">Feed</h4>
