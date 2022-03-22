@@ -76,7 +76,7 @@ Features
 
 ### Layouts
 
-* `plain`: navbar at the top + footer at the bottom
+* `plain`: navbar at the top + footer at the bottom.
 * `default`: same as plain, but with a sidebar on the right.
 * `page`: same as default, but with the page's header.
 * `post`: same as default, but with the post's header and publication date.
