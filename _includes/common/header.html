@@ -47,20 +47,27 @@
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
-    {% if page.custom_css %}
-      {% for css in page.custom_css %}
-        {% assign abs_check = css | downcase | split: '//' %}
-        {% if abs_check[0] == 'http:' or abs_check[0] == 'https:' or abs_check[0] == blank %}
-          {% assign url = css %}
-        {% else %}
-          {% assign url = '/assets/css/' | relative_url | append: css %}
-        {% endif %}
-        <link rel="stylesheet" href="{{ url }}">
-      {% endfor %}
+    {% assign links = '' | split: '' %}
+    {% if site.settings.links %}
+      {% assign links = links | concat: site.settings.links %}
+    {% endif %}
+    {% if page.links %}
+      {% assign links = links | concat: page.links %}
     {% endif %}
 
-    {% for link in site.settings.links %}
-      <link{% for attr in link %} {{ attr[0] }}="{{ attr[1] }}"{% endfor %}>
+    {% for link in links %}
+      {% assign abs_check = link.href | downcase | split: '//' %}
+      {% if abs_check[0] == 'http:' or abs_check[0] == 'https:' or abs_check[0] == '' %}
+        {% assign url = link.href %}
+      {% else %}
+        {% assign abs_check = link.href | slice: 0 %}
+        {% if abs_check == '/' %}
+          {% assign url = link.href %}
+        {% else %}
+          {% assign url = link.href | relative_url %}
+        {% endif %}
+      {% endif %}
+      <link href="{{ url }}"{% for attr in link %}{% if attr[0] == 'href' %}{% continue %}{% endif %} {{ attr[0] }}="{{ attr[1] }}"{% endfor %}>
     {% endfor %}
 
     {% if site.settings.ga_tag %}

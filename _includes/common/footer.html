@@ -48,16 +48,28 @@
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="{{ '/assets/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>
-    {% if page.custom_js %}
-      {% for js in page.custom_js %}
-        {% assign abs_check = js | downcase | split: '//' %}
-        {% if abs_check[0] == 'http:' or abs_check[0] == 'https:' or abs_check[0] == blank %}
-          {% assign url = js %}
-        {% else %}
-          {% assign url = '/assets/js/' | relative_url | append: js %}
-        {% endif %}
-        <script src="{{ url }}"></script>
-      {% endfor %}
+
+    {% assign scripts = '' | split: '' %}
+    {% if site.settings.scripts %}
+      {% assign scripts = scripts | concat: site.settings.scripts %}
     {% endif %}
+    {% if page.scripts %}
+      {% assign scripts = scripts | concat: page.scripts %}
+    {% endif %}
+
+    {% for script in scripts %}
+      {% assign abs_check = script.src | downcase | split: '//' %}
+      {% if abs_check[0] == 'http:' or abs_check[0] == 'https:' or abs_check[0] == '' %}
+        {% assign url = script.src %}
+      {% else %}
+        {% assign abs_check = script.src | slice: 0 %}
+        {% if abs_check == '/' %}
+          {% assign url = script.src %}
+        {% else %}
+          {% assign url = script.src | relative_url %}
+        {% endif %}
+      {% endif %}
+      <script src="{{ url }}"{% for attr in script %}{% if attr[0] == 'src' %}{% continue %}{% endif %} {{ attr[0] }}="{{ attr[1] }}"{% endfor %}></script>
+    {% endfor %}
   </body>
 </html>
