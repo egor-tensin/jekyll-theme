@@ -155,6 +155,18 @@ See [this post][collapsible] for an example.
 
 [collapsible]: _posts/2021-04-10-collapsible.md
 
+### Shell commands
+
+See [this post][shell] for an example of adding pretty shell commands and their
+outputs to a page.
+The gist is:
+
+[shell]: _posts/2022-03-21-shell.md
+
+```
+{% include shell.html cmd='echo 123' out='123' %}
+```
+
 ### Typesetting math
 
 [MathJax] can be used to typeset mathematics using LaTeX.
