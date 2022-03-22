@@ -6,33 +6,33 @@
             <div class="row">
               <div class="col-xs-12 text-center">
 
-                    {% if site.settings.project.license_file %}
-                      {% capture license_file %}{{ '/' | relative_url }}{{ site.settings.project.license_file }}{% endcapture %}
-                    {% else %}
-                      {% for file in site.static_files %}
-                        {% assign path = file.path | downcase %}
-                        {% if path == 'license' or path == 'license.txt' %}
-                          {% assign license_file = file.path | relative_url %}
-                        {% endif %}
-                      {% endfor %}
-                    {% endif %}
-                    {% if site.settings.project.license %}
-                      {% assign license = site.settings.project.license %}
-                      {% unless license_file %}
-                        {% capture license_file %}https://spdx.org/licenses/{{ license }}.html{% endcapture %}
-                        {% capture license %}{{ license }} License{% endcapture %}
-                      {% endunless %}
-                    {% elsif site.github.license %}
-                      {% assign license = site.github.license.name %}
-                      {% unless license_file %}
-                        {% capture license_file %}https://spdx.org/licenses/{{ site.github.license.spdx_id }}.html{% endcapture %}
-                      {% endunless %}
-                    {% endif %}
-                    {% if license %}
-                      {% capture license_text %}License: <a href="{{ license_file }}">{{ license }}</a>{% endcapture %}
-                    {% elsif license_file %}
-                      {% capture license_text %}License: <a href="{{ license_file }}">click here</a>{% endcapture %}
-                    {% endif %}
+{% if site.settings.project.license_file %}
+  {% capture license_file %}{{ '/' | relative_url }}{{ site.settings.project.license_file }}{% endcapture %}
+{% else %}
+  {% for file in site.static_files %}
+    {% assign path = file.path | downcase %}
+    {% if path == 'license' or path == 'license.txt' %}
+      {% assign license_file = file.path | relative_url %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% if site.settings.project.license %}
+  {% assign license = site.settings.project.license %}
+  {% unless license_file %}
+    {% capture license_file %}https://spdx.org/licenses/{{ license }}.html{% endcapture %}
+    {% capture license %}{{ license }} License{% endcapture %}
+  {% endunless %}
+{% elsif site.github.license %}
+  {% assign license = site.github.license.name %}
+  {% unless license_file %}
+    {% capture license_file %}https://spdx.org/licenses/{{ site.github.license.spdx_id }}.html{% endcapture %}
+  {% endunless %}
+{% endif %}
+{% if license %}
+  {% capture license_text %}License: <a href="{{ license_file }}">{{ license }}</a>{% endcapture %}
+{% elsif license_file %}
+  {% capture license_text %}License: <a href="{{ license_file }}">click here</a>{% endcapture %}
+{% endif %}
 
 {% capture sep %}<span style="padding: 0 1em;">|</span>{% endcapture %}
 {% capture timestamp_text %}Last update: {{ site.time | date: '%-d %B %Y' }}{% endcapture %}
