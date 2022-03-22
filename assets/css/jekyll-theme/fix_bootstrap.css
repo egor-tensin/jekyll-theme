@@ -41,3 +41,13 @@ pre code {
 .list-group-item-heading:last-child {
   margin-bottom: 0;
 }
+/*
+ * <pre> elements lose horizontal scrollbars on narrow displays (< 768px).
+ * Why? I don't know, but this guy does: https://stackoverflow.com/a/35423965/514684
+ */
+.container {
+  max-width: 100%;
+}
+pre {
+  position: relative;
+}

@@ -1,10 +1,8 @@
-        </div>
       </div>
-      <div class="footer-wrapper-collapse">
-        <footer class="navbar-default">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12 text-center">
+      <footer class="navbar-default">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 text-center">
 
 {% if site.settings.project.license_file %}
   {% capture license_file %}{{ '/' | relative_url }}{{ site.settings.project.license_file }}{% endcapture %}
@@ -40,11 +38,10 @@
   {% if license_text %}{{ license_text }}{{ sep }}{% endif %}{{ timestamp_text }}
 </div>
 
-              </div>
             </div>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="{{ '/assets/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>
