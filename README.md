@@ -72,6 +72,7 @@ Features
 * [Code snippets](#code-snippets)
 * [Shell commands](#shell-commands)
 * [Typesetting math](#typesetting-math)
+* [Custom CSS & JavaScript](#custom-css--javascript)
 
 ### Layouts
 
