@@ -1,6 +1,5 @@
 {% if site.posts.size == 0 %}
   <p>Sorry, no posts have been added yet.</p>
-  <hr/>
 {% else %}
   {% for category in site.categories %}
     <h1><a class="category" href="{{ '/' | relative_url }}{{ category[0] | slugify: 'pretty' }}/">{{ category[0] }}</a></h1>
