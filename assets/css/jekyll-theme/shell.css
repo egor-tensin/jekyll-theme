@@ -5,12 +5,12 @@
 }
 
 /* WTF is this? I somehow came up with it, but I hope there's a better way.
- * 10.5px is the standard bottom margin for <pre>s. */
+ * 11px is the standard bottom margin for <pre>s. */
 .shell {
-  margin-bottom: 10.5px;
+  margin-bottom: 11px;
 }
 .shell + .shell {
-  margin-top: -10.5px;
+  margin-top: -11px;
 }
 
 .shell > div {
