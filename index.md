@@ -1,13 +1,13 @@
 ---
 base: https://egor-tensin.github.io
-title: Home page
+title: jekyll-theme
 layout: plain
 navbar:
   link: Home
   priority: 1
 ---
-jekyll-theme
-============
+{{ page.title }}
+================
 
 ---
 
