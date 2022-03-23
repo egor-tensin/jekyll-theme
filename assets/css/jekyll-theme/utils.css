@@ -13,3 +13,12 @@
 html * {
   max-height: 1000000px;
 }
+/* If the screen is wide enough to have the sidebar stacked horizontally,
+ * hide the separator bar. */
+@media (min-width: 992px) {
+  /* 992px is the -md- width. The sidebar is stacked horizontally on -md- or
+   * wider. */
+  .sidebar-sep {
+    display: none;
+  }
+}
