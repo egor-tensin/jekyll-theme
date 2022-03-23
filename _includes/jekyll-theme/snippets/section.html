@@ -5,7 +5,7 @@
 {% endif %}
 
 {% for i in page.snippets[include.section_id] %}
-  {% include snippets/header.html snippet_path=i section_id=include.section_id %}
+  {% include jekyll-theme/snippets/header.html snippet_path=i section_id=include.section_id %}
 
 {% capture snippet %}
 ```{{ page.snippets_language }}
@@ -14,7 +14,7 @@
 
 {{ snippet | markdownify }}
 
-  {% include snippets/footer.html %}
+  {% include jekyll-theme/snippets/footer.html %}
 {% endfor %}
 
 </div>

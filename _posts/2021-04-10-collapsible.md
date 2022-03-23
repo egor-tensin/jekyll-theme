@@ -18,8 +18,8 @@ Just set a front matter value to make them collapsible, and voilà!
 
 [other post]: {{ site.baseurl }}{% post_url 2021-04-09-snippets %}
 
-{% include snippets/section.html section_id='hello' %}
+{% include jekyll-theme/snippets/section.html section_id='hello' %}
 
 This is another set of snippets:
 
-{% include snippets/section.html section_id='world' %}
+{% include jekyll-theme/snippets/section.html section_id='world' %}

@@ -162,7 +162,7 @@ And then you can just format an entire section of snippets using a single
 `include`:
 
 ```
-{% include snippets/section.html section_id='hello' %}
+{% include jekyll-theme/snippets/section.html section_id='hello' %}
 ```
 
 The line above would output both hello.hpp and hello.cpp to the page.
@@ -181,7 +181,7 @@ The gist is:
 [shell]: _posts/2022-03-21-shell.md
 
 ```
-{% include shell.html cmd='echo 123' out='123' %}
+{% include jekyll-theme/shell.html cmd='echo 123' out='123' %}
 ```
 
 ### Typesetting math

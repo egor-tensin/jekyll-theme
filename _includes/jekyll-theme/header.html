@@ -43,7 +43,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    {% include mathjax.html %}
+    {% include jekyll-theme/mathjax.html %}
 
     <link rel="stylesheet" href="{{ '/assets/css/jekyll-theme.css' | relative_url }}">
 
@@ -71,10 +71,10 @@
     {% endfor %}
 
     {% if site.settings.ga_tag %}
-      {% include common/ga.html ga_tag=site.settings.ga_tag %}
+      {% include jekyll-theme/ga.html ga_tag=site.settings.ga_tag %}
     {% endif %}
   </head>
   <body>
     <div style="display: flex; flex-direction: column; min-height: 100vh;">
-      {% include common/navbar.html %}
+      {% include jekyll-theme/navbar.html %}
       <div class="container" style="flex: 1;">
