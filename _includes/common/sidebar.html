@@ -1,3 +1,4 @@
+{% unless site.settings.sidebar.hide or page.sidebar.hide %}
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-12">
     <h4>About</h4>
@@ -37,3 +38,4 @@
   </div>
   {% endif %}
 </div>
+{% endunless %}
