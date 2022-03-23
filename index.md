@@ -4,7 +4,6 @@ title: Home page
 layout: plain
 navbar:
   link: Home
-  icon: home
   priority: 1
 ---
 jekyll-theme
