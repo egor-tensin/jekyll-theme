@@ -58,6 +58,8 @@ settings:
     github:
       link: GitHub
       icon: globe
+  sidebar:
+    hide: false
   # If you want to enable Google Analytics, optional:
   ga_tag: X-XXXXXXXXXX
 ```
@@ -67,6 +69,7 @@ Features
 
 * [Layouts](#layouts)
 * [Navbar](#navbar)
+* [Sidebar](#sidebar)
 * [Feed](#feed)
 * [Categories](#categories)
 * [Code snippets](#code-snippets)
@@ -105,6 +108,11 @@ Customize the link text and the icon by setting
 accordingly.
 
 Hide the link by setting `site.settings.navbar.github` to `false`.
+
+### Sidebar
+
+Hide the sidebar by setting either `site.settings.sidebar.hide` or
+`page.sidebar.hide` to `true`.
 
 ### Feed
 
