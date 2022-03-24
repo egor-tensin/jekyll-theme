@@ -118,6 +118,8 @@ The sidebar includes two entries by default: "About" and "Latest posts".
 Hide them individually by setting `sidebar.{about,latest_posts}.hide` to `true`
 (either under `site.settings` or `page`).
 
+Add content to the sidebar by putting it in your _includes/custom-sidebar.html.
+
 ### Feed
 
 See [feed/index.html] for an example of how to easily create a paginated post
