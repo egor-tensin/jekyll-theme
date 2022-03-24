@@ -1,0 +1,16 @@
+{% if site.posts.size > 0 %}
+
+{% capture latest_posts_content %}
+<div class="list-group wide-enough">
+  {% for post in site.posts limit: 5 %}
+  <a class="list-group-item" href="{{ post.url | relative_url }}">
+    <span class="badge"><span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d %b %Y' }}</span>
+    <span class="glyphicon glyphicon-file"></span>&nbsp;{{ post.title }}
+  </a>
+  {% endfor %}
+</div>
+{% endcapture %}
+
+{% include jekyll-theme/sidebar/entry.html header='Latest posts' content=latest_posts_content %}
+{% endif %}
+
