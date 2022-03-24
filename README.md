@@ -114,6 +114,10 @@ Hide the link by setting `site.settings.navbar.github` to `false`.
 Hide the sidebar by setting either `site.settings.sidebar.hide` or
 `page.sidebar.hide` to `true`.
 
+The sidebar includes two entries by default: "About" and "Latest posts".
+Hide them individually by setting `sidebar.{about,latest_posts}.hide` to `true`
+(either under `site.settings` or `page`).
+
 ### Feed
 
 See [feed/index.html] for an example of how to easily create a paginated post
