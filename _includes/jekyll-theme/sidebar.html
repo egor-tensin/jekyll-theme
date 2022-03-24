@@ -25,7 +25,7 @@
 </div>
 {% endcapture %}
 
-{% include jekyll-theme/sidebar_entry.html header='About' content=about_content %}
+{% include jekyll-theme/sidebar/entry.html header='About' content=about_content %}
 
 {% if site.posts.size > 0 %}
 
@@ -40,7 +40,7 @@
 </div>
 {% endcapture %}
 
-{% include jekyll-theme/sidebar_entry.html header='Latest posts' content=latest_posts_content %}
+{% include jekyll-theme/sidebar/entry.html header='Latest posts' content=latest_posts_content %}
 {% endif %}
 
 </div>
