@@ -1,3 +1,4 @@
+{% unless site.settings.sidebar.latest_posts.hide or page.sidebar.latest_posts.hide %}
 {% if site.posts.size > 0 %}
 
 {% capture latest_posts_content %}
@@ -12,5 +13,6 @@
 {% endcapture %}
 
 {% include jekyll-theme/sidebar/entry.html header='Latest posts' content=latest_posts_content %}
-{% endif %}
 
+{% endif %}
+{% endunless %}

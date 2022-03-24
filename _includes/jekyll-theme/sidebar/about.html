@@ -1,3 +1,5 @@
+{% unless site.settings.sidebar.about.hide or page.sidebar.about.hide %}
+
 {% capture about_content %}
 {% assign project_desc = site.settings.project.description %}
 {% unless project_desc %}
@@ -23,3 +25,5 @@
 {% endcapture %}
 
 {% include jekyll-theme/sidebar/entry.html header='About' content=about_content %}
+
+{% endunless %}
