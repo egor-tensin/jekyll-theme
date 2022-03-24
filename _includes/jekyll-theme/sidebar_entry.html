@@ -1,4 +1,4 @@
 <div class="col-xs-12 col-sm-6 col-md-12">
-  <h4>{{ include.header }}</h4>
+  {% if include.header %}<h4>{{ include.header }}</h4>{% endif %}
   {{ include.content }}
 </div>
