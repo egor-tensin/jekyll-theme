@@ -1,6 +1,7 @@
 @import 'jekyll-theme/fix_bootstrap.css';
 @import 'jekyll-theme/footer.css';
 @import 'jekyll-theme/posts.css';
+@import 'jekyll-theme/scrollbar.css';
 @import 'jekyll-theme/shell.css';
 @import 'jekyll-theme/snippets.css';
 @import 'jekyll-theme/syntax.css';

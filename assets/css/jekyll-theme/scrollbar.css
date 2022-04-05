@@ -1,0 +1,18 @@
+/* Scrollbars. */
+/* Firefox: */
+.pretty-scrollbar, pre {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f0f0f0;
+}
+/* Chrome: */
+.pretty-scrollbar::-webkit-scrollbar, pre::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.pretty-scrollbar::-webkit-scrollbar-track, pre::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+.pretty-scrollbar::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+

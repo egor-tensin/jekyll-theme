@@ -15,7 +15,7 @@
 {% endfor %}
 {% assign cmd = new_cmd %}
 {% assign cmd = cmd | join: '' %}
-<div>
+<div class='pretty-scrollbar'>
   <pre class="shell-mark">$</pre><pre class="shell-cmd">{{ cmd }}</pre>
 </div>
 {% if include.out %}

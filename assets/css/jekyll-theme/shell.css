@@ -50,21 +50,3 @@
 .shell-out {
   border-width: 0 0 thin 0;
 }
-
-/* Scrollbars. */
-/* Firefox: */
-.shell * {
-  scrollbar-width: thin;
-  scrollbar-color: #ccc #f0f0f0;
-}
-/* Chrome: */
-.shell *::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-.shell *::-webkit-scrollbar-track {
-  background: #f0f0f0;
-}
-.shell *::-webkit-scrollbar-thumb {
-  background: #ccc;
-}
