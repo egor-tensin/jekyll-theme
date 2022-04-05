@@ -11,8 +11,9 @@
 }
 .pretty-scrollbar::-webkit-scrollbar-track, pre::-webkit-scrollbar-track {
   background: #f0f0f0;
+  border-radius: inherit;
 }
 .pretty-scrollbar::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb {
   background: #ccc;
+  border-radius: inherit;
 }
-
