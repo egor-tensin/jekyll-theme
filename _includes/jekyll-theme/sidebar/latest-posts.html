@@ -3,16 +3,21 @@
 
 {% capture latest_posts_content %}
 <div class="list-group wide-enough">
+  <div class="list-group-item disabled">
+    <h4 class="list-group-item-heading">latest posts</h4>
+  </div>
   {% for post in site.posts limit: 5 %}
   <a class="list-group-item" href="{{ post.url | relative_url }}">
-    <span class="badge"><span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d %b %Y' }}</span>
-    <span class="glyphicon glyphicon-file"></span>&nbsp;{{ post.title }}
+    <h5 class="list-group-item-heading post-header">
+      <span>{{ post.title }}</span>
+      <small><span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d %b %Y' }}</small>
+    </h5>
   </a>
   {% endfor %}
 </div>
 {% endcapture %}
 
-{% include jekyll-theme/sidebar/entry.html header='Latest posts' content=latest_posts_content %}
+{% include jekyll-theme/sidebar/entry.html content=latest_posts_content %}
 
 {% endif %}
 {% endunless %}
