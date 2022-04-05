@@ -1,16 +1,11 @@
 ---
 base: https://egor-tensin.github.io
 title: jekyll-theme
-layout: plain
+layout: nosidebar
 navbar:
   link: Home
   priority: 1
 ---
-{{ page.title }}
-================
-
----
-
 <div style="display: flex; flex-wrap: wrap; column-gap: 1em;">
 
 <div class="list-group wide-enough">

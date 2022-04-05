@@ -82,6 +82,7 @@ Features
 * `plain`: navbar at the top + footer at the bottom.
 * `default`: same as plain, but with a sidebar on the right.
 * `page`: same as default, but with the page's header.
+* `nosidebar`: same as page, but without the sidebar.
 * `post`: same as default, but with the post's header and publication date.
 
 ### Navbar
