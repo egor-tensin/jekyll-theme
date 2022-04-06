@@ -53,3 +53,9 @@ pre {
   cursor: auto !important;
   user-select: none;
 }
+
+/* This is copied from Bootstrap's code.
+ * This class should be available natively for Bootstrap 4 and newer. */
+.text-monospace {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
