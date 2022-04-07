@@ -2,7 +2,7 @@
   <p class="h3">Sorry, no posts have been added yet.</p>
 {% else %}
   {% for post in paginator.posts %}
-    <div class="post-entry">
+    <div class="feed-entry">
       <div class="post-header">
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         <div class="post-date">
