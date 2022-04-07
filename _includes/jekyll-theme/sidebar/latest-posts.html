@@ -10,7 +10,7 @@
   <a class="list-group-item" href="{{ post.url | relative_url }}">
     <h5 class="list-group-item-heading post-header">
       <span>{{ post.title }}</span>
-      <small><span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d %b %Y' }}</small>
+      <small class="post-date"><span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d %b %Y' }}</small>
     </h5>
   </a>
   {% endfor %}
