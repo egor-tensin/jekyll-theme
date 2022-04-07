@@ -14,10 +14,11 @@
   margin-right: .5em;
 }
 
-.sidebar .post-header {
+/* On the sidebar, don't shrink the date part, shrink the header. */
+.list-group-item .post-header {
   flex-wrap: nowrap;
 }
-.sidebar .post-date {
+.list-group-item .post-date {
   flex-shrink: 0;
 }
 
