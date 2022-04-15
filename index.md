@@ -48,11 +48,15 @@ I use it for
 
 You can check out the available features if you follow the links on this page.
 
+Please see the [README] file for detailed information on how to use and
+configure this theme.
+
 [Jekyll]: https://jekyllrb.com/
 [egor-tensin.github.io]: {{ page.base }}
 [blog]: {{ page.base }}/blog/
 [sorting-algorithms]: {{ page.base }}/sorting-algorithms/
 [wireguard-config]: {{ page.base }}/wireguard-config/
+[README]: {{ site.github.repository_url }}#jekyll-theme
 
 </div>
 </div>
