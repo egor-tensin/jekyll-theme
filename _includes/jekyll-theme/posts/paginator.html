@@ -21,12 +21,14 @@
     </li>
   {% else %}
     <li class="disabled">
-      <a href="#">{{ prev }}</a>
+      <span>{{ prev }}</span>
     </li>
   {% endif %}
   {% for page_number in (1..paginator.total_pages) %}
     {% if page_number == paginator.page %}
-      <li class="active"><a href="#">{{ page_number }}</a></li>
+      <li class="active">
+        <span>{{ page_number }}</span>
+      </li>
     {% elsif page_number == 1 %}
       <li>
         <a href="{{ page1_url | relative_url }}">{{ page_number }}</a>
@@ -43,7 +45,7 @@
     </li>
   {% else %}
     <li class="disabled">
-      <a href="#">{{ next }}</a>
+      <span>{{ next }}</span>
     </li>
   {% endif %}
 </ul>
