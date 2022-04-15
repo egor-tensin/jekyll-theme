@@ -32,7 +32,7 @@
   {% capture license_text %}License: <a href="{{ license_file }}">click here</a>{% endcapture %}
 {% endif %}
 
-{% capture timestamp_text %}Last update: {{ site.time | date: '%-d %B %Y' }}{% endcapture %}
+{% capture timestamp_text %}Build: {{ site.time | date: '%-d %B %Y' }}{% endcapture %}
 
 {% assign footer_items = '' | split: '' %}
 {% if license_text %}
