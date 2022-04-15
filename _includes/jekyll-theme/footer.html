@@ -32,10 +32,18 @@
   {% capture license_text %}License: <a href="{{ license_file }}">click here</a>{% endcapture %}
 {% endif %}
 
-{% capture sep %}<span style="padding: 0 1em;">|</span>{% endcapture %}
 {% capture timestamp_text %}Last update: {{ site.time | date: '%-d %B %Y' }}{% endcapture %}
-<div class="small text-muted">
-  {% if license_text %}{{ license_text }}{{ sep }}{% endif %}{{ timestamp_text }}
+
+{% assign footer_items = '' | split: '' %}
+{% if license_text %}
+  {% assign footer_items = footer_items | push: license_text %}
+{% endif %}
+{% assign footer_items = footer_items | push: timestamp_text %}
+
+<div class="small text-muted footer-items">
+  {% for item in footer_items %}
+    <div class="footer-item">{{ item }}</div>
+  {% endfor %}
 </div>
 
             </div>

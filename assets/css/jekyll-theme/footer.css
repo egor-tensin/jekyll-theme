@@ -4,3 +4,34 @@ footer {
   border-width: 1px 0;
   border-style: solid;
 }
+/*
+ * I'm in awe of this absolutely disgusting hack that I came up with.
+ * The thing is, I have a number of "items" in my footer, which are
+ * essentially pieces of text.
+ *
+ * I want them separated with a vertical line. At first, I just placed a
+ * literal vertical bar symbol | between items. This worked well enough until
+ * items started to overflow. So I tried to use border-left on all but the
+ * first item, which got rid of the inconsistent wrapping of the | symbol. But
+ * I didn't want the wrapped items to have a border, I just wanted the border
+ * between items on the same line.
+ *
+ * The solution you can see below. The flex container has a background-color,
+ * and a column gap of 1px, emulating a border. The items have the same
+ * background-color as the footer, which concludes the trick. I'm sure it'll
+ * break, let's see how.
+ */
+.footer-items {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* This is the .text-muted color. */
+  background-color: #999;
+  column-gap: 1px;
+}
+.footer-item {
+  flex-grow: 1;
+  padding: 0 1em;
+  /* This is the navbar color. */
+  background-color: #f3f8ff;
+}
