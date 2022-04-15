@@ -9,7 +9,7 @@
 {% else %}
   {% for file in site.static_files %}
     {% assign path = file.path | downcase %}
-    {% if path == 'license' or path == 'license.txt' %}
+    {% if path == '/license' or path == '/license.txt' %}
       {% assign license_file = file.path | relative_url %}
     {% endif %}
   {% endfor %}
