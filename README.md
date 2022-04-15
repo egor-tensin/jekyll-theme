@@ -129,6 +129,10 @@ Basically, just include posts/feed.html.
 
 [feed/index.html]: feed/index.html
 
+For this to work, you must enable the `jekyll-paginate` plugin.
+Don't forget to set `site.paginate_path` to a proper URL (with the `:num`
+placeholder) in \_config.yml, like `/feed/page:num/` or something.
+
 ### Categories
 
 See [life/index.html] or [work/index.html] for examples of how to create
