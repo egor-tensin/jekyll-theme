@@ -18,6 +18,8 @@
     {% assign page1_url = page.url | split: '/' | pop | join: '/' | append: '/' %}
   {% endif %}
 
+<div class="text-center">
+
 <ul class="pagination">
   {% if paginator.previous_page %}
     <li>
@@ -53,5 +55,7 @@
     </li>
   {% endif %}
 </ul>
+
+</div>
 
 {% endif %}
