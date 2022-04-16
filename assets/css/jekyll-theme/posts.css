@@ -19,6 +19,7 @@
   flex-shrink: 0;
 }
 
+/* Don't use an actual <hr>, it's margins are too big, use a border instead. */
 .feed-entry {
   margin-bottom: 15px;
   /* The color of <hr>. */
