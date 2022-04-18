@@ -42,10 +42,21 @@
 {% assign footer_items = footer_items | push: timestamp_text %}
 {% assign footer_items = footer_items | push: theme_text %}
 
+{% capture sep %}<span class="footer-item-sep">|</span>{% endcapture %}
 <div class="small text-muted footer-items">
-  {% for item in footer_items %}
-    <div class="footer-item">{{ item }}</div>
-  {% endfor %}
+  {%- comment -%}
+    Make sure to collapse the Liquid whitespace here.
+    If you replace the <div>s with <span>s and don't collapse whitespace,
+    extra spaces will be inserted between elements.
+  {%- endcomment -%}
+  {%- for item in (1..footer_items.size) -%}
+    {%- assign idx = item | minus: 1 -%}
+    {%- if item == 1 -%}
+      <div class="footer-item">{{ footer_items[idx] }}</div>
+    {%- else -%}
+      <div class="footer-item">{{ sep }}{{ footer_items[idx] }}</div>
+    {%- endif -%}
+  {%- endfor -%}
 </div>
 
             </div>
