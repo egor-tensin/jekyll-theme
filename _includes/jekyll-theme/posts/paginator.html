@@ -5,8 +5,8 @@
 
 {% if site.posts.size != 0 %}
 
-  {% capture prev %}<span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Prev{% endcapture %}
-  {% capture next %}Next&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>{% endcapture %}
+  {% capture prev %}<span class="glyphicon glyphicon-chevron-left"></span>{% endcapture %}
+  {% capture next %}<span class="glyphicon glyphicon-chevron-right"></span>{% endcapture %}
 
   {% comment %}
     Link to page 1 is tricky. If site.paginate_path is used, then we cannot
