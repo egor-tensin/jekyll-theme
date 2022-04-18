@@ -3,7 +3,7 @@
   https://jekyllrb.com/docs/pagination/.
 {% endcomment %}
 
-{% if site.posts.size != 0 %}
+{% if paginator.total_pages > 1 %}
 
   {% capture prev %}<span class="glyphicon glyphicon-chevron-left"></span>{% endcapture %}
   {% capture next %}<span class="glyphicon glyphicon-chevron-right"></span>{% endcapture %}
