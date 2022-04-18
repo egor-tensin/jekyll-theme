@@ -35,7 +35,8 @@
 @media (min-width: 480px) {
   /* If the screen width allows for it, add some padding on the sides. */
   .feed-entry {
-    padding: 0 11px;
+    padding-left: 11px;
+    padding-right: 11px;
   }
 }
 .feed-entry:hover, .feed-entry:focus {
@@ -54,8 +55,14 @@
    * Android's Chrome thinks that it's not necessary to highlight the top
    * margin (reproducible by long-pressing the link), _but_ it does highlight
    * the top padding. This is obviously a browser bug. */
+
+  /* Also, set the value to a lower one, it's better that way. */
   margin-top: 0;
-  padding-top: 22px;
+  padding-top: 16px;
+}
+.feed-entry {
+  /* Add some padding on the bottom to match the top value. */
+  padding-bottom: 5px;
 }
 
 .pagination {
