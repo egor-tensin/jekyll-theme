@@ -57,3 +57,9 @@
   margin-top: 0;
   padding-top: 22px;
 }
+
+.pagination {
+  /* In my layout, there's always something under the paginator, and it always
+   * has a top margin, and the margins _never_ collapse. */
+  margin-bottom: 0;
+}
