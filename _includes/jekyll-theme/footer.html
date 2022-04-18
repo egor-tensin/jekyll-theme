@@ -27,13 +27,13 @@
   {% endunless %}
 {% endif %}
 {% if license %}
-  {% capture license_text %}License: <a href="{{ license_file }}">{{ license }}</a>{% endcapture %}
+  {% capture license_text %}<a href="{{ license_file }}">{{ license }}</a>{% endcapture %}
 {% elsif license_file %}
-  {% capture license_text %}License: <a href="{{ license_file }}">click here</a>{% endcapture %}
+  {% capture license_text %}License: <a href="{{ license_file }}">view</a>{% endcapture %}
 {% endif %}
 
 {% capture timestamp_text %}Build: {{ site.time | date: '%-d %B %Y' }}{% endcapture %}
-{% capture theme_text %}<a href="https://egor-tensin.github.io/jekyll-theme/">jekyll-theme</a> by <a href="https://egor-tensin.github.io/">Egor Tensin</a>{% endcapture %}
+{% capture theme_text %}<a href="https://egor-tensin.github.io/jekyll-theme/">jekyll-theme</a>{% endcapture %}
 
 {% assign footer_items = '' | split: '' %}
 {% if license_text %}
