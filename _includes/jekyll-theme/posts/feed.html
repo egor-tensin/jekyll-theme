@@ -7,9 +7,13 @@
         <h3>{{ post.title }}</h3>
         <div class="post-date">
           <p class="text-muted">
-            {% if post.category %}
+            {%- comment -%}
+              Collapse the Liquid whitespace here, so that no extra spaces
+              between <span>s are introduced.
+            {%- endcomment -%}
+            {%- if post.category -%}
               <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<span class="category">{{ post.category }}</span>
-            {% endif %}
+            {%- endif -%}
             <span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d&nbsp;%b&nbsp;%Y' }}
           </p>
         </div>
