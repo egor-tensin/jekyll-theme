@@ -11,7 +11,7 @@
 .post-date {
   flex: none;
 }
-.post-date a.category {
+.post-date .category {
   margin-right: .5em;
 }
 
@@ -23,8 +23,37 @@
   column-gap: 1em;
 }
 
-/* Don't use an actual <hr>, it's margins are too big, use a border instead. */
 .feed-entry {
-  /* The color of <hr>. */
+  /* The entire feed entry is a link now. */
+  display: block;
+  position: relative;
+  color: inherit !important;
+  /* Don't use an actual <hr>, it's margins are too big, use a border instead.
+   * The color of <hr>. */
   border-bottom: 3px solid #eee;
+}
+@media (min-width: 480px) {
+  /* If the screen width allows for it, add some padding on the sides. */
+  .feed-entry {
+    padding: 0 11px;
+  }
+}
+.feed-entry:hover, .feed-entry:focus {
+  /* Obviously, don't underline anything. The :focus case can be reproduced by
+   * long-pressing the link on Android, then dismissing the popup and long-
+   * pressing another link. */
+  text-decoration: none;
+}
+.feed-entry:hover {
+  /* This is the .list-group-item:hover background color. */
+  background-color: #f5f5f5;
+}
+
+.feed-entry h3 {
+  /* This is pretty funny and tragic, as is always the case with CSS.
+   * Android's Chrome thinks that it's not necessary to highlight the top
+   * margin (reproducible by long-pressing the link), _but_ it does highlight
+   * the top padding. This is obviously a browser bug. */
+  margin-top: 0;
+  padding-top: 22px;
 }

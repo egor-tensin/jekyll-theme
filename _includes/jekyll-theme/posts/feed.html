@@ -2,20 +2,20 @@
   <p class="h3">Sorry, no posts have been added yet.</p>
 {% else %}
   {% for post in paginator.posts %}
-    <div class="feed-entry">
+    <a href="{{ post.url | relative_url }}" class="feed-entry">
       <div class="post-header">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <h3>{{ post.title }}</h3>
         <div class="post-date">
           <p class="text-muted">
             {% if post.category %}
-              <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ '/' | relative_url }}{{ post.category | slugify: 'pretty' }}/">{{ post.category }}</a>
+              <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<span class="category">{{ post.category }}</span>
             {% endif %}
             <span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d&nbsp;%b&nbsp;%Y' }}
           </p>
         </div>
       </div>
       {{ post.excerpt | markdownify }}
-    </div>
+    </a>
   {% endfor %}
   {% include jekyll-theme/posts/paginator.html %}
 {% endif %}
