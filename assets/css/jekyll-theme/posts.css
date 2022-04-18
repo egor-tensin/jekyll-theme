@@ -25,7 +25,6 @@
 
 /* Don't use an actual <hr>, it's margins are too big, use a border instead. */
 .feed-entry {
-  margin-bottom: 15px;
   /* The color of <hr>. */
-  border-bottom: 1px solid #eee;
+  border-bottom: 3px solid #eee;
 }
