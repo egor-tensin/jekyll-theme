@@ -32,7 +32,7 @@
   {% capture license_text %}License: <a href="{{ license_file }}">view</a>{% endcapture %}
 {% endif %}
 
-{% capture timestamp_text %}Build: {{ site.time | date: '%-d %B %Y' }}{% endcapture %}
+{% capture timestamp_text %}Build: {{ site.time | date: '%F' }}{% endcapture %}
 {% capture theme_text %}<a href="https://egor-tensin.github.io/jekyll-theme/">jekyll-theme</a>{% endcapture %}
 
 {% assign footer_items = '' | split: '' %}
