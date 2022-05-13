@@ -2,7 +2,7 @@
 title: Collapsible snippets
 excerpt: >
   Snippets can be hidden in collapsible panels.
-category: Code
+category: code
 snippets_root_directory: snippets
 snippets_language: c++
 snippets_collapsible: true
