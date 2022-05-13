@@ -18,7 +18,7 @@
           </p>
         </div>
       </div>
-      {{ post.excerpt | markdownify }}
+      <div class="text-muted">{{ post.excerpt | markdownify }}</div>
     </a>
   {% endfor %}
   {% include jekyll-theme/posts/paginator.html %}
