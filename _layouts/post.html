@@ -1,19 +1,5 @@
 ---
 layout: default
 ---
-<div class="post-header">
-  <h1>{{ page.title }}</h1>
-  <div class="post-date">
-    <p class="text-muted">
-      {%- comment -%}
-        Collapse the Liquid whitespace here, so that no extra spaces
-        between <span>s are introduced.
-      {%- endcomment -%}
-      {%- if page.category -%}
-        <span class="glyphicon glyphicon-folder-open"></span>&nbsp;<a class="category" href="{{ '/' | relative_url }}{{ page.category | slugify: 'pretty' }}/">{{ page.category }}</a>
-      {%- endif -%}
-      <span class="glyphicon glyphicon-time"></span>&nbsp;{{ page.date | date: '%-d&nbsp;%b&nbsp;%Y' }}
-    </p>
-  </div>
-</div>
+{% include jekyll-theme/posts/header.html %}
 {{ content }}

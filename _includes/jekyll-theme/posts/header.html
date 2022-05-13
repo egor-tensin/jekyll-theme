@@ -1,0 +1,32 @@
+<div class="post-header">
+  {% assign h = 'h1' %}
+  {% if include.feed %}
+    {% assign h = 'h3' %}
+  {% else %}
+    {% assign post = page %}
+  {% endif %}
+  <{{ h }}>{{ post.title }}</{{ h }}>
+  <div class="post-date">
+    <p class="text-muted">
+      {%- comment -%}
+        Collapse the Liquid whitespace here, so that no extra spaces
+        between <span>s are introduced.
+      {%- endcomment -%}
+      {%- if post.category -%}
+        <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+        {%- if include.feed -%}
+          <span class="category">
+        {%- else -%}
+          <a class="category" href="{{ '/' | relative_url }}{{ post.category | slugify: 'pretty' }}/">
+        {%- endif -%}
+        {{ post.category }}
+        {%- if include.feed -%}
+          </span>
+        {%- else -%}
+          </a>
+        {%- endif -%}
+      {%- endif -%}
+      <span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d&nbsp;%b&nbsp;%Y' }}
+    </p>
+  </div>
+</div>
