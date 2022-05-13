@@ -7,7 +7,7 @@
   {% endif %}
   <{{ h }}>{{ post.title }}</{{ h }}>
   <div class="post-date">
-    <p class="text-muted">
+    <p class="text-muted font-size-90">
       {%- comment -%}
         Collapse the Liquid whitespace here, so that no extra spaces
         between <span>s are introduced.
@@ -15,9 +15,9 @@
       {%- if post.category -%}
         <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
         {%- if include.feed -%}
-          <span class="category">
+          <span class="category text-monospace">
         {%- else -%}
-          <a class="category" href="{{ '/' | relative_url }}{{ post.category | slugify: 'pretty' }}/">
+          <a class="category text-monospace" href="{{ '/' | relative_url }}{{ post.category | slugify: 'pretty' }}/">
         {%- endif -%}
         {{ post.category }}
         {%- if include.feed -%}
@@ -26,7 +26,7 @@
           </a>
         {%- endif -%}
       {%- endif -%}
-      <span class="glyphicon glyphicon-time"></span>&nbsp;{{ post.date | date: '%-d&nbsp;%b&nbsp;%Y' }}
+      <span class="glyphicon glyphicon-time"></span>&nbsp;<span class="text-monospace">{{ post.date | date: '%-d-%b-%Y' }}</span>
     </p>
   </div>
 </div>
