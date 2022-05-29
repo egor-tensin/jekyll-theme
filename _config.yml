@@ -39,6 +39,7 @@ kramdown:
 plugins:
   - jekyll-github-metadata
   - jekyll-paginate
+  - jekyll-tidy
 
 # jekyll-github-metadata
 repository: egor-tensin/jekyll-theme
