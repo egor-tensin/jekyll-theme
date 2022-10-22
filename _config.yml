@@ -6,8 +6,11 @@ show_drafts: true
 strict_front_matter: true
 
 exclude:
+  - Gemfile
+  - Gemfile.lock
   - Makefile
   - README.md
+  - vendor/
 
 defaults:
   - scope:
