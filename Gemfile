@@ -4,6 +4,6 @@ gem 'jekyll', '~> 3'
 gem 'jekyll-github-metadata'
 gem 'jekyll-paginate'
 gem 'jekyll-tidy'
-# Why is this not a dependency of Jekyll? Considering that without
-# kramdown-parser-gfm, Jekyll will error out.
+
+# Jekyll 3.9.0 requires this as an explicit dependency:
 gem 'kramdown-parser-gfm'
