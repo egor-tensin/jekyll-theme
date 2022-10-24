@@ -26,7 +26,18 @@
   flex: none;
 }
 .post-date .category {
-  margin-right: .5em;
+  margin-right: 1em;
+}
+
+/* Add some margin after the last .feed-entry. */
+.feed-entry {
+  margin-bottom: 11px;
+}
+.feed-entry + .feed-entry {
+  margin-top: -11px;
+}
+.pagination {
+  margin-top: 11px;
 }
 
 .feed-entry {
@@ -36,7 +47,7 @@
   color: inherit !important;
   /* Don't use an actual <hr>, it's margins are too big, use a border instead.
    * The color of <hr>. */
-  border-bottom: 3px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 @media (min-width: 480px) {
   /* If the screen width allows for it, add some padding on the sides. */
@@ -56,23 +67,12 @@
   background-color: #f5f5f5;
 }
 
-.feed-entry h3 {
+.feed-entry h5 {
   /* This is pretty funny and tragic, as is always the case with CSS.
    * Android's Chrome thinks that it's not necessary to highlight the top
    * margin (reproducible by long-pressing the link), _but_ it does highlight
    * the top padding. This is obviously a browser bug. */
 
-  /* Also, set the value to a lower one, it's better that way. */
-  margin-top: 0;
-  padding-top: 16px;
-}
-.feed-entry {
-  /* Add some padding on the bottom to match the top value. */
-  padding-bottom: 5px;
-}
-
-.pagination {
-  /* In my layout, there's always something under the paginator, and it always
-   * has a top margin, and the margins _never_ collapse. */
-  margin-bottom: 0;
+  margin: 0;
+  padding: 15px 0 11px;
 }

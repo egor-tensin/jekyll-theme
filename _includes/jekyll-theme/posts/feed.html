@@ -4,7 +4,6 @@
   {% for post in paginator.posts %}
     <a href="{{ post.url | relative_url }}" class="feed-entry">
       {% include jekyll-theme/posts/header.html feed=true %}
-      <div class="text-muted">{{ post.excerpt | markdownify }}</div>
     </a>
   {% endfor %}
   {% include jekyll-theme/posts/paginator.html %}
