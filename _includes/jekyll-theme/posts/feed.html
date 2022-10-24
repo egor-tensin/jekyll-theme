@@ -3,7 +3,7 @@
 {% else %}
   {% for post in paginator.posts %}
     <a href="{{ post.url | relative_url }}" class="feed-entry">
-      {% include jekyll-theme/posts/header.html feed=true %}
+      {% include jekyll-theme/posts/header.html feed=true title=post.title date=post.date category=post.category %}
     </a>
   {% endfor %}
   {% include jekyll-theme/posts/paginator.html %}

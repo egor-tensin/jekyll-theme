@@ -2,30 +2,21 @@
   {% if include.feed %}
     <h5 class="text-monospace">{{ include.title }}</h5>
   {% else %}
-    {% assign post = page %}
-    <h1><span class="font-size-90">{{ post.title }}</span></h1>
+    <h1><span class="font-size-90">{{ include.title }}</span></h1>
   {% endif %}
+
   <div class="post-date">
     <p class="text-muted font-size-90">
       {%- comment -%}
         Collapse the Liquid whitespace here, so that no extra spaces
         between <span>s are introduced.
       {%- endcomment -%}
-      {%- if post.category -%}
-        <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
-        {%- if include.feed -%}
-          <span class="category text-monospace">
-        {%- else -%}
-          <a class="category text-monospace" href="{{ '/' | relative_url }}{{ post.category | slugify: 'pretty' }}/">
-        {%- endif -%}
-        {{ post.category }}
-        {%- if include.feed -%}
-          </span>
-        {%- else -%}
-          </a>
-        {%- endif -%}
+      {%- if include.category -%}
+        {% include jekyll-theme/categories/label.html category=include.category feed=include.feed %}
       {%- endif -%}
-      <span class="glyphicon glyphicon-time"></span>&nbsp;<span class="text-monospace">{{ post.date | date: '%d-%b-%Y' }}</span>
+      {%- if include.date -%}
+        <span class="glyphicon glyphicon-time"></span>&nbsp;<span class="text-monospace">{{ include.date | date: '%d-%b-%Y' }}</span>
+      {%- endif -%}
     </p>
   </div>
 </div>

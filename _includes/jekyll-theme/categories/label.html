@@ -1,0 +1,6 @@
+<span class="glyphicon glyphicon-folder-open"></span>&nbsp;
+{%- if include.feed -%}
+  <span class="category text-monospace">{{ include.category | downcase }}</span>
+{%- else -%}
+  <a class="category text-monospace" href="{{ '/' | relative_url }}{{ include.category | slugify: 'pretty' }}/">{{ include.category | downcase }}</a>
+{%- endif -%}

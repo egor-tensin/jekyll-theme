@@ -1,11 +1,12 @@
-<p>This is a list of posts in category "{{ include.category }}".</p>
+<h1>{% include jekyll-theme/categories/label.html category=include.category feed=true %}</h1>
 {% if site.categories[include.category].size > 0 %}
-  <ul>
-    {% for post in site.categories[include.category] %}
-      <li><a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }} &mdash; {{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+  {% for post in site.categories[include.category] %}
+    <a href="{{ post.url | relative_url }}" class="feed-entry">
+      {% include jekyll-theme/posts/header.html feed=true title=post.title date=post.date %}
+    </a>
+  {% endfor %}
 {% endif %}
 {% if include.archive_link %}
   <p>For a complete list of posts grouped by category, please see <a href="{{ include.archive_link | relative_url }}">this page</a>.</p>
+  {% include jekyll-theme/sidebar/sep.html %}
 {% endif %}
