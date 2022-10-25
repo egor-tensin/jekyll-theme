@@ -80,9 +80,9 @@ Features
 
 * `plain`: navbar at the top + footer at the bottom.
 * `default`: same as plain, but with a sidebar on the right.
-* `page`: same as default, but with the page's header.
+* `page`: same as default, but includes the page title.
 * `nosidebar`: same as page, but without the sidebar.
-* `post`: same as default, but with the post's header and publication date.
+* `post`: same as default, but includes the post title and publication date.
 
 ### Navbar
 
@@ -116,7 +116,7 @@ Hide the sidebar by setting either `site.settings.sidebar.hide` or
 
 The sidebar includes two entries by default: "About" and "Latest posts".
 Hide them individually by setting `sidebar.{about,latest_posts}.hide` to `true`
-(either under `site.settings` or `page`).
+(under either `site.settings` or `page`).
 
 Add content to the sidebar by putting it in your _includes/custom-sidebar.html.
 
@@ -134,13 +134,13 @@ placeholder) in \_config.yml, like `/feed/page:num/` or something.
 
 ### Categories
 
-See [life/index.html] or [work/index.html] for examples of how to create
+See [code/index.html] or [features/index.html] for examples of how to create
 category pages, with a list of posts belonging to the category.
 Basically, just include categories/category.html and set the `category`
 parameter to the category's name.
 
-[life/index.html]: life/index.html
-[work/index.html]: work/index.html
+[code/index.html]: code/index.html
+[features/index.html]: features/index.html
 
 If you want to create a page with a list of all categories and the posts
 belonging to them, see [archive/index.html] for an example.
