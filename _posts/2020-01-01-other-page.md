@@ -1,7 +1,5 @@
 ---
 title: Other page
-excerpt: >
-  This post shouldn't appear on the first page of the feed.
 ---
 {{ page.excerpt }}
 
