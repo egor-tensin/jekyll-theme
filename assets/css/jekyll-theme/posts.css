@@ -1,29 +1,19 @@
-/* On the sidebar, the date is always beside the header.
- * On smaller devices, the date is always beneath the header.
- * On the post page, the date is beside the header or wraps to the next line on
- * larger devices.
- * In the feed, the date is always beside the header on larger devices. */
-@media (min-width: 768px) {
-  .post-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    column-gap: 1em;
-  }
-  :not(.feed-entry) > .post-header {
-    flex-wrap: wrap;
-  }
-}
-.list-group-item .post-header {
+/* Wrap the post date to the next line if necessary. */
+.post-header {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  column-gap: 1em;
+  column-gap: 1.5em;
+}
+.list-group-item .post-header {
+  flex-wrap: nowrap;
 }
 
 .post-date {
   flex: none;
+  /* Right-align the post date if on the next line. */
+  margin-left: auto;
 }
 .post-date .category {
   margin-right: 1em;
