@@ -1,0 +1,4 @@
+{% unless site.settings.sidebar.hide or page.sidebar.hide %}
+  {% comment %}Separate the content from the sidebar on narrow screens.{% endcomment %}
+  <hr class="sidebar-sep"/>
+{% endunless %}

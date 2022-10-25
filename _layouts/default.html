@@ -2,10 +2,6 @@
 <div class="row">
   <div class="col-md-8">
     {{ content }}
-    {% unless site.settings.sidebar.hide or page.sidebar.hide %}
-      {% comment %}Separate the content from the sidebar on narrow screens.{% endcomment %}
-      <hr class="sidebar-sep"/>
-    {% endunless %}
   </div>
   <div class="col-md-4">
     {% include jekyll-theme/sidebar.html %}
