@@ -10,7 +10,7 @@ layout: default
 
 {% capture date %}<p>{{ category }}{{ date }}</p>{% endcapture %}
 
-{% capture title %}<h1>{{ page.title }}</h1>{% endcapture %}
+{% capture title %}<h1><span class="font-size-90">{{ page.title }}</span></h1>{% endcapture %}
 
 {% include jekyll-theme/flex-header.html title=title right=date %}
 {{ content }}
