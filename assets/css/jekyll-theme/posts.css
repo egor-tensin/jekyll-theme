@@ -23,13 +23,13 @@
 
 /* Add some margin after the last .feed-entry. */
 .feed-entry {
-  margin-bottom: 11px;
+  margin-bottom: 20px;
 }
 .feed-entry + .feed-entry {
-  margin-top: -11px;
+  margin-top: -20px;
 }
 .pagination {
-  margin-top: 11px;
+  margin-top: 0;
 }
 
 .feed-entry {
