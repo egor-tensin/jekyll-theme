@@ -1,0 +1,5 @@
+{% assign fmt = include.fmt %}
+{% unless fmt %}
+  {% assign fmt = "%F" %}
+{% endunless %}
+<span class="glyphicon glyphicon-time"></span>&nbsp;<span{% if include.monospace %} class="text-monospace"{% endif %}>{{ include.date | date: fmt }}</span>

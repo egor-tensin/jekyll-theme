@@ -1,6 +1,9 @@
+{%- capture url -%}{{ '/' | relative_url }}{{ include.category | slugify: 'pretty' }}{%- endcapture -%}
+{%- assign label = include.category | downcase -%}
+
 <span class="glyphicon glyphicon-folder-open"></span>&nbsp;
-{%- if include.feed -%}
-  <span class="category text-monospace">{{ include.category | downcase }}</span>
+{%- if include.link -%}
+  <a class="category{% if include.monospace %} text-monospace{% endif %}" href="{{ url }}/">{{ label }}</a>
 {%- else -%}
-  <a class="category text-monospace" href="{{ '/' | relative_url }}{{ include.category | slugify: 'pretty' }}/">{{ include.category | downcase }}</a>
+  <span class="category{% if include.monospace %} text-monospace{% endif %}">{{ label }}</span>
 {%- endif -%}

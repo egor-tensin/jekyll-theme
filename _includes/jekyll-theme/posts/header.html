@@ -1,22 +1,15 @@
-<div class="post-header">
-  {% if include.feed %}
-    <h5 class="text-monospace">{{ include.title }}</h5>
-  {% else %}
-    <h1><span class="font-size-90">{{ include.title }}</span></h1>
-  {% endif %}
+{% assign header_date = null %}
+{% if include.date %}
+  {% capture header_date %}{%- include jekyll-theme/posts/date.html date=include.date monospace=true -%}{% endcapture %}
+{% endif %}
 
-  <div class="post-date">
-    <p class="text-muted font-size-90">
-      {%- comment -%}
-        Collapse the Liquid whitespace here, so that no extra spaces
-        between <span>s are introduced.
-      {%- endcomment -%}
-      {%- if include.category -%}
-        {% include jekyll-theme/categories/label.html category=include.category feed=include.feed %}
-      {%- endif -%}
-      {%- if include.date -%}
-        <span class="glyphicon glyphicon-time"></span>&nbsp;<span class="text-monospace">{{ include.date | date: '%d-%b-%Y' }}</span>
-      {%- endif -%}
-    </p>
-  </div>
-</div>
+{% assign header_category = null %}
+{% if include.category %}
+  {% capture header_category %}{%- include jekyll-theme/categories/label.html category=include.category monospace=true -%}{% endcapture %}
+{% endif %}
+
+{% capture header_title %}<h5 class="text-monospace">{{ include.title }}</h5>{% endcapture %}
+
+<a href="{{ include.url | relative_url }}" class="feed-entry">
+  {% include jekyll-theme/flex-header.html left=header_date title=header_title right=header_category %}
+</a>

@@ -1,9 +1,7 @@
-<h1>{% include jekyll-theme/categories/label.html category=include.category feed=true %}</h1>
+<h1>{% include jekyll-theme/categories/label.html category=include.category monospace=true %}</h1>
 {% if site.categories[include.category].size > 0 %}
   {% for post in site.categories[include.category] %}
-    <a href="{{ post.url | relative_url }}" class="feed-entry">
-      {% include jekyll-theme/posts/header.html feed=true title=post.title date=post.date %}
-    </a>
+    {% include jekyll-theme/posts/header.html url=post.url title=post.title date=post.date %}
   {% endfor %}
 {% endif %}
 {% if include.archive_link %}

@@ -1,22 +1,16 @@
 /* Wrap the post date to the next line if necessary. */
-.post-header {
+.flex-header {
   display: flex;
-  flex-wrap: wrap;
   align-items: baseline;
-  justify-content: space-between;
   column-gap: 1.5em;
 }
-.list-group-item .post-header {
-  flex-wrap: nowrap;
-}
 
-.post-date {
+.flex-header-left, .flex-header-right {
   flex: none;
+}
+.flex-header-right {
   /* Right-align the post date if on the next line. */
   margin-left: auto;
-}
-.post-date .category {
-  margin-right: 1em;
 }
 
 /* Add some margin after the last .feed-entry. */

@@ -4,20 +4,16 @@
   {% assign categories = site.categories | sort %}
   {% for category in categories %}
     {% assign category_name = category[0] %}
-    <h2>{% include jekyll-theme/categories/label.html category=category_name %}</h2>
+    <h2>{% include jekyll-theme/categories/label.html link=true category=category_name monospace=true %}</h2>
     {% for post in category[1] %}
-      <a href="{{ post.url | relative_url }}" class="feed-entry">
-        {% include jekyll-theme/posts/header.html feed=true title=post.title date=post.date %}
-      </a>
+      {% include jekyll-theme/posts/header.html url=post.url title=post.title date=post.date %}
     {% endfor %}
   {% endfor %}
   {% assign uncategorized = site.posts | where_exp: "post","post.categories.size == 0" %}
   {% if uncategorized.size != 0 %}
-    <h2>{% include jekyll-theme/categories/label.html category="Other" feed=true %}</h2>
+    <h2>{% include jekyll-theme/categories/label.html category="Other" monospace=true %}</h2>
     {% for post in uncategorized %}
-      <a href="{{ post.url | relative_url }}" class="feed-entry">
-        {% include jekyll-theme/posts/header.html feed=true title=post.title date=post.date %}
-      </a>
+      {% include jekyll-theme/posts/header.html url=post.url title=post.title date=post.date %}
     {% endfor %}
   {% endif %}
 {% endif %}
