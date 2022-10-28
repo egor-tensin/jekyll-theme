@@ -1,11 +1,11 @@
 <div class="flex-header" style="flex-wrap: wrap;">
   <div class="flex-header">
     {% if include.left %}
-      <p class="flex-header-left text-muted font-size-90">{{ include.left }}</p>
+      <div class="flex-header-left text-muted font-size-90">{{ include.left }}</div>
     {% endif %}
     <div class="flex-header-title">{{ include.title }}</div>
   </div>
   {% if include.right %}
-    <p class="flex-header-right text-muted font-size-90">{{ include.right }}</p>
+    <div class="flex-header-right text-muted font-size-90">{{ include.right }}</div>
   {% endif %}
 </div>

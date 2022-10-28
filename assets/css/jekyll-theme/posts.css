@@ -4,6 +4,14 @@
   align-items: baseline;
   column-gap: 1.5em;
 }
+@media(max-width: 480px) {
+  .flex-header {
+    column-gap: 1em;
+  }
+  .feed-entry .hide-on-mobile {
+    display: none;
+  }
+}
 
 .flex-header-left, .flex-header-right {
   flex: none;

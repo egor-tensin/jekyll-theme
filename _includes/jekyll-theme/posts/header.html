@@ -1,11 +1,15 @@
 {% assign header_date = null %}
 {% if include.date %}
-  {% capture header_date %}{%- include jekyll-theme/posts/date.html date=include.date monospace=true -%}{% endcapture %}
+  {% capture header_date %}<p>{%- include jekyll-theme/posts/date.html date=include.date monospace=true -%}</p>{% endcapture %}
 {% endif %}
 
 {% assign header_category = null %}
 {% if include.category %}
-  {% capture header_category %}{%- include jekyll-theme/categories/label.html category=include.category monospace=true -%}{% endcapture %}
+  {% capture header_category %}
+    <p class="hide-on-mobile">
+      {%- include jekyll-theme/categories/label.html category=include.category monospace=true -%}
+    </p>
+  {% endcapture %}
 {% endif %}
 
 {% capture header_title %}<h5 class="text-monospace">{{ include.title }}</h5>{% endcapture %}
