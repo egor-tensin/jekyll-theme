@@ -114,9 +114,9 @@ Hide the link by setting `site.settings.navbar.github` to `false`.
 Hide the sidebar by setting either `site.settings.sidebar.hide` or
 `page.sidebar.hide` to `true`.
 
-The sidebar includes two entries by default: "About" and "Latest posts".
-Hide them individually by setting `sidebar.{about,latest_posts}.hide` to `true`
-(under either `site.settings` or `page`).
+The sidebar includes 3 entries by default: "latest posts", "about" and "links".
+Hide them individually by setting `sidebar.{latest_posts,about,links}.hide` to
+`true` (under either `site.settings` or `page`).
 
 Add content to the sidebar by putting it in your _includes/custom-sidebar.html.
 

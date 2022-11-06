@@ -20,20 +20,6 @@
     <p class="list-group-item-text">{{ project_desc }}</p>
   </div>
 </div>
-
-<div class="list-group wide-enough">
-  <div class="list-group-item disabled">
-    <h4 class="list-group-item-heading">links</h4>
-  </div>
-  {% if site.github %}
-    {% assign github_link = site.settings.navbar.github.link | default: 'GitHub' %}
-    {% assign github_icon = site.settings.navbar.github.icon | default: 'globe' %}
-    {% capture github_icon %}<span class="glyphicon glyphicon-{{ github_icon }}"></span>&nbsp;{% endcapture %}
-  <a class="list-group-item" href="{{ site.github.repository_url }}" target="_blank">{{ github_icon }}{{ github_link }}</a>
-  {% endif %}
-  {% assign author_email = site.settings.author.email | default: 'John.Doe@example.com' %}
-  <a class="list-group-item" href="mailto:{{ author_email }}"><span class="glyphicon glyphicon-envelope"></span>&nbsp;{{ author_email }}</a>
-</div>
 {% endcapture %}
 
 {% include jekyll-theme/sidebar/entry.html content=about_content %}
