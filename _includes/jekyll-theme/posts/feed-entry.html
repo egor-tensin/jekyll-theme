@@ -1,6 +1,6 @@
 {% assign header_date = null %}
 {% if include.date %}
-  {% capture header_date %}<p>{%- include jekyll-theme/posts/date.html date=include.date monospace=true -%}</p>{% endcapture %}
+  {% capture header_date %}<p>{%- include jekyll-theme/posts/date.html date=include.date monospace=true hide_icon=true -%}</p>{% endcapture %}
 {% endif %}
 
 {% assign header_category = null %}

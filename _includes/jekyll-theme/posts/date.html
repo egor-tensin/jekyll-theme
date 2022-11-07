@@ -2,4 +2,4 @@
 {% unless fmt %}
   {% assign fmt = '%Y<span class="hide-on-mobile">-</span>%m<span class="hide-on-mobile">-</span>%d' %}
 {% endunless %}
-<span class="hide-on-mobile"><span class="glyphicon glyphicon-time"></span>&nbsp;</span><span{% if include.monospace %} class="text-monospace"{% endif %}>{{ include.date | date: fmt }}</span>
+{% unless include.hide_icon %}<span class="hide-on-mobile"><span class="glyphicon glyphicon-time"></span>&nbsp;</span>{% endunless %}<span{% if include.monospace %} class="text-monospace"{% endif %}>{{ include.date | date: fmt }}</span>
