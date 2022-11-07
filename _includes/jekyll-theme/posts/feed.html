@@ -2,7 +2,7 @@
   <p class="h3">Sorry, no posts have been added yet.</p>
 {% else %}
   {% for post in paginator.posts %}
-    {% include jekyll-theme/posts/header.html url=post.url date=post.date title=post.title category=post.category %}
+    {% include jekyll-theme/posts/feed-entry.html url=post.url date=post.date title=post.title category=post.category %}
   {% endfor %}
   {% include jekyll-theme/posts/paginator.html %}
 {% endif %}

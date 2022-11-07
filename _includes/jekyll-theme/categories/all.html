@@ -6,14 +6,14 @@
     {% assign category_name = category[0] %}
     <h2>{% include jekyll-theme/categories/label.html link=true category=category_name monospace=true %}</h2>
     {% for post in category[1] %}
-      {% include jekyll-theme/posts/header.html url=post.url title=post.title date=post.date %}
+      {% include jekyll-theme/posts/feed-entry.html url=post.url title=post.title date=post.date %}
     {% endfor %}
   {% endfor %}
   {% assign uncategorized = site.posts | where_exp: "post","post.categories.size == 0" %}
   {% if uncategorized.size != 0 %}
     <h2>{% include jekyll-theme/categories/label.html category="Other" monospace=true %}</h2>
     {% for post in uncategorized %}
-      {% include jekyll-theme/posts/header.html url=post.url title=post.title date=post.date %}
+      {% include jekyll-theme/posts/feed-entry.html url=post.url title=post.title date=post.date %}
     {% endfor %}
   {% endif %}
 {% endif %}
