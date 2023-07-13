@@ -255,6 +255,11 @@ You can also add custom `<script>` tags in a similar way.
         - {src: 'assets/js/local-script.js'}
       ---
 
+Development
+-----------
+
+See [DEVELOPMENT.md](DEVELOPMENT.md).
+
 History
 -------
 
@@ -272,11 +277,6 @@ I thought about several alternatives to cloning the whole repository.
 history.
 2. Heavily rewriting repository history using `git filter-branch` or something
 like this is painfully hard to get right for me.
-
-Development
------------
-
-See [DEVELOPMENT.md](DEVELOPMENT.md).
 
 License
 -------
