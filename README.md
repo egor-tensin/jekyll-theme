@@ -276,19 +276,7 @@ like this is painfully hard to get right for me.
 Development
 -----------
 
-### Bootstrap theme
-
-At one point I decided to bundle a modified version of Bootstrap 3.4 with the
-theme.
-One thing I found annoying about the unmodified Bootstrap is the small font
-size & the insanely large headers.
-I used the [customization tool] with a [custom config] to download a modified
-Boost version and included it in the assets/bootstrap directory.
-
-[customization tool]: https://getbootstrap.com/docs/3.4/customize/
-[custom config]: assets/bootstrap/config.json
-
-TODO: port the theme to Bootstrap 4/5/whatever?
+See [DEVELOPMENT.md](DEVELOPMENT.md).
 
 License
 -------
