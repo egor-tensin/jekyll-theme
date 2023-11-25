@@ -1,5 +1,5 @@
 ---
-base: https://egort.name
+base: https://tensin.name
 title: jekyll-theme
 layout: nosidebar
 navbar:
@@ -41,7 +41,7 @@ navbar:
 This is a preview for my [Jekyll] theme.
 I use it for
 
-* [egort.name],
+* [tensin.name],
 * [blog],
 * [sorting-algorithms],
 * [wireguard-config].
@@ -52,7 +52,7 @@ Please see the [README] file for detailed information on how to use and
 configure this theme.
 
 [Jekyll]: https://jekyllrb.com/
-[egort.name]: {{ page.base }}
+[tensin.name]: {{ page.base }}
 [blog]: {{ page.base }}/blog/
 [sorting-algorithms]: {{ page.base }}/sorting-algorithms/
 [wireguard-config]: {{ page.base }}/wireguard-config/
