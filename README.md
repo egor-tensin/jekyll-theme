@@ -16,7 +16,7 @@ I use it for [tensin.name], [blog], [sorting-algorithms], [wireguard-config].
 Preview
 -------
 
-An example website can be viewed at https://tensin.name/jekyll-theme/.
+An example website can be viewed at https://tensin.name/jekyll-theme/
 
 Usage
 -----
